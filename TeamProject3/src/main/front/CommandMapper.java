@@ -14,7 +14,8 @@ public class CommandMapper {
 		
 		map.put("test.do", new TestService());
 		map.put("error.do", new ErrorService());
-		
+		map.put("login.do", new ErrorService());
+		map.put("register.do", new ErrorService());
 		return map;
 	}
 }
