@@ -118,7 +118,7 @@
               </div>
               <div class="card-body px-lg-3 py-lg-5">
 				<br>
-                <form action="">
+                <form action="registerOp.do">
                   <div class="form-group">
                     <div class="input-group input-group-alternative mb-3">
                       <div class="input-group-prepend">
@@ -140,7 +140,7 @@
                       <div class="input-group-prepend">
                         <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                       </div>
-                      <input pw="pw" class="form-control" placeholder="Password" type="password">
+                      <input name="pw" class="form-control" placeholder="Password" type="password">
                       
                     </div>
                   </div>
@@ -152,7 +152,7 @@
                     </div>
                   </div>
                   <div class="text-center">
-                    <input type="submit"  class="btn btn-lg btn-primary" disabled value="가입하기">
+                    <input type="submit"  class="btn btn-lg btn-primary" value="가입하기">
                   </div>
                 </form>
               </div>
