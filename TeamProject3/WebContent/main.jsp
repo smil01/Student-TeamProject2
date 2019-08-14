@@ -18,130 +18,19 @@
   <!-- Argon CSS -->
   <link type="text/css" href="./assets/css/argon.css?v=1.1.0" rel="stylesheet">
     <style>
-    *{margin:0;padding:0;}
-    ul,li{list-style:none;}
-    .slide{height:1000px;overflow:hidden;position:relative;width:1200px;}
-    .slide ul{height: calc(100%*4); width: calc(100%);transition:1s;}
-    .slide li{height: calc(80%); width: calc(100%);}
-    .slide li{position:absolute;left:0;right:0;top:0;bottom:0;opacity:0;transition:1s;}
-    .slide li:nth-child(1){background-image:url("./assets/img/theme/title001.jpg");}
-    .slide li:nth-child(2){background:#faa;}
-    .slide li:nth-child(3){background:#afa;}
-    .slide li:nth-child(4){background:#aaf;}
-    .slide input{display:none;}
-    .slide .bullet{position:absolute;bottom:20px;left:0;right:0;text-align:center;z-index:10;}
-    .slide .bullet label{width:10px;height:10px;border-radius:10px;border:2px solid #666;display:inline-block;background:#fff;font-size:0;transition:0.5s;cursor:pointer;}
-    /* 슬라이드 조작 */
-    #pos1:checked ~ ul li:nth-child(1),
-    #pos2:checked ~ ul li:nth-child(2),
-    #pos3:checked ~ ul li:nth-child(3),
-    #pos4:checked ~ ul li:nth-child(4){opacity:1;}
-    /* bullet 조작 */
-    #pos1:checked ~ .bullet label:nth-child(1),
-    #pos2:checked ~ .bullet label:nth-child(2),
-    #pos3:checked ~ .bullet label:nth-child(3),
-    #pos4:checked ~ .bullet label:nth-child(4){background:#666;}
+ 	/* banner */
+	.banner {position: relative; width: 1200px; height: 800px; bottom:50px; margin:0 auto; padding:0; overflow: hidden;}
+	.banner ul {position: absolute; margin: 0px; padding:0; list-style: none; }
+	.banner ul li {float: left; width: 1200px; height: 800px; margin:0; padding:0;}
+
+	section {
+	padding-top: 0px;
+}
   </style>
 </head>
 
 <body>
-  <header class="header-global">
-    <nav id="navbar-main" class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light headroom">
-      <div class="container">
-        <a class="navbar-brand mr-lg-5" href="./index.html">
-          <img alt="image" src="./assets/img/brand/main.png">
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="navbar-collapse collapse" id="navbar_global">
-          <div class="navbar-collapse-header">
-            <div class="row">
-              <div class="col-6 collapse-brand">
-                <a href="./index.html">
-                  <img alt="image" src="./assets/img/brand/blue.png">
-                </a>
-              </div>
-              <div class="col-6 collapse-close">
-                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
-                  <span></span>
-                  <span></span>
-                </button>
-              </div>
-            </div>
-          </div>
-          <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
-            <li class="nav-item dropdown">
-              <a href="#" class="nav-link" data-toggle="dropdown" role="button">
-                <i class="ni ni-ui-04 d-lg-none"></i>
-                <span class="nav-link-inner--text">MainContent</span>
-              </a>
-              <div class="dropdown-menu dropdown-menu-xl">
-                <div class="dropdown-menu-inner">
-                  <a href="#" class="media d-flex align-items-center">
-                    <div class="icon icon-shape bg-gradient-primary rounded-circle text-white">
-                      <i class="ni ni-spaceship"></i>
-                    </div>
-                    <div class="media-body ml-3">
-                      <h6 class="heading text-primary mb-md-1">선거지역 추천</h6>
-                      <p class="description d-none d-md-inline-block mb-0">당신의 선거를 도와드립니다.</p>
-                    </div>
-                  </a>
-                  <a href="#" class="media d-flex align-items-center">
-                    <div class="icon icon-shape bg-gradient-success rounded-circle text-white">
-                      <i class="ni ni-palette"></i>
-                    </div>
-                    <div class="media-body ml-3">
-                      <h6 class="heading text-primary mb-md-1">음성 비교</h6>
-                      <p class="description d-none d-md-inline-block mb-0">문재인 대통령과 자신의 목소리를 비교하여 얼마나 음성이 일치하는지 보여줍니다.</p>
-                    </div>
-                  </a>
-                  <a href="#" class="media d-flex align-items-center">
-                    <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
-                      <i class="ni ni-ui-04"></i>
-                    </div>
-                    <div class="media-body ml-3">
-                      <h5 class="heading text-warning mb-md-1">선거 지역 키워드 추천</h5>
-                      <p class="description d-none d-md-inline-block mb-0">해당 지역의 선거에 사용될 키워드를 제공해드립니다.</p>
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </li>
-            <li class="nav-item dropdown">
-              <a href="./examples/login.html">
-                <i class="ni ni-collection d-lg-none"> 가입하기</i>
-                <span class="nav-link-inner--text"></span>
-              </a>
-              <div class="dropdown-menu">
-                <a href="./examples/landing.html" class="dropdown-item">Landing</a>
-                <a href="./examples/profile.html" class="dropdown-item">Profile</a>
-                <a href="login.do" class="dropdown-item">로그인</a>
-                <a href="register.do" class="dropdown-item">가입하기</a>
-              </div>
-            </li>
-          </ul>
- 
-        </div>
-      </div>
-    </nav>
-  </header>
   <main>
-    <!--
-
-=========================================================
-* Argon Design System - v1.1.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/argon-design-system
-* Copyright 2019 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/argon-dashboard/blob/master/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. -->
     <div class="position-relative">
       <!-- Hero for FREE version -->
       <section class="section section-lg section-hero section-shaped">
@@ -162,15 +51,15 @@
           <div class="col px-0">
             <div class="row align-items-center justify-content-center">
               <div class="col-lg-6 text-center">
-                <img alt="image" src="./assets/img/brand/main.png" style="width: 200px;" class="img-fluid">
+                <img alt="image" src="./assets/img/brand/main.png" style="width: 300px;" class="img-fluid">
                 <p class="lead text-white">선거유세지역 추천 웹사이트
                 </p>
                 <div class="btn-wrapper mt-5">
 				<br><br><br>
 				
-				<button type="button" class="btn btn-secondary btn-lg"><a href="register.do">가입하기</a></button>
-				<button type="button" class="btn btn-secondary btn-lg"><a href="login.do">로그인</a></button>              
-
+				<button type="button" class="btn btn-default btn-lg"><a href="register.jsp">가입하기</a></button>
+				<button type="button" class="btn btn-default btn-lg"><a href="login.jsp">로그인</a></button>              
+				<br><br>
               </div>
             </div>
           </div>
@@ -185,11 +74,8 @@
         </div>
     </div>
 
-    <section class="section section-lg">
-      <div class="container">
 
 
-    </section>
         <section class="section bg-secondary">
       <div class="container">
         <div class="row row-grid align-items-center">
@@ -211,8 +97,8 @@
               <div class="icon icon-lg icon-shape icon-shape-warning shadow rounded-circle mb-5">
                 <i class="ni ni-air-baloon"></i>
               </div>
-            
-              <p class="lead"></p>
+              <h3>Team Signer의 목표</h3>
+              <p class="lead"> 팀 설립 목표 내용 입력</p>
               <p>팀 설립 목표 내용 입력</p>
               <p>팀 설립 목표 내용 입력</p>
               <a href="#" class="font-weight-bold text-warning mt-5">We Support All Candidates</a>
@@ -221,7 +107,7 @@
         </div>
       </div>
     </section>
-    <section class="section pb-0 bg-gradient-warning">
+    <section class="section pb-0 bg-gradient-warning" style="margin-bottom: 10px;">
       <div class="container">
         <div class="row row-grid align-items-center">
           <div class="col-md-6 order-lg-2 ml-lg-auto">
@@ -229,25 +115,14 @@
               
             </div>
           </div>
-          <div class="col-lg-6 order-lg-1" >
-                 <div class="slide">
-    				<input type="radio" name="pos" id="pos1" checked>
-				    <input type="radio" name="pos" id="pos2">
-				    <input type="radio" name="pos" id="pos3">
-				    <input type="radio" name="pos" id="pos4">
-				    <ul>
-				      <li></li>
-				      <li></li>
-				      <li></li>
-				      <li></li>
-				    </ul>
-				    <p class="bullet">
-				      <label for="pos1">1</label>
-				      <label for="pos2">2</label>
-				      <label for="pos3">3</label>
-				      <label for="pos4">4</label>
-				    </p>
-			  </div>
+          <div class="col-lg-6 order-lg-1">
+		<div class="banner">
+			<ul>
+				<li><img src="./assets/img/theme/title001.jpg" width="1200px" height="800px"></li>
+				<li><img src="./assets/img/theme/title002.jpg" width="1200px" height="800px"></li>
+				
+			</ul>
+		</div>
 
 
             </div>
@@ -290,6 +165,69 @@
     </div>
   </footer>
   <!-- Core -->
+  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script language="JavaScript">
+
+
+	$(document).ready(function() {
+		//사용할 배너
+		var $banner = $(".banner").find("ul");
+
+		var $bannerWidth = $banner.children().outerWidth();//배너 이미지의 폭
+		var $bannerHeight = $banner.children().outerHeight(); // 높이
+		var $bannerLength = $banner.children().length;//배너 이미지의 갯수
+		var rollingId;
+		
+		$banner.mouseover(function(){
+			//중지
+			clearInterval(rollingId);
+			$(this).css("cursor", "pointer");
+		});
+		//마우스 아웃되면 다시 시작
+		$banner.mouseout(function(){
+			rollingId = setInterval(function() { rollingStart(); }, 3000);
+			$(this).css("cursor", "default");
+		});
+
+		//정해진 초마다 함수 실행
+		rollingId = setInterval(function() { rollingStart(); }, 3000);//다음 이미지로 롤링 애니메이션 할 시간차
+
+		//마우스 오버시 롤링을 멈춘다.
+		banner.mouseover(function(){
+			//중지
+			clearInterval(rollingId);
+			$(this).css("cursor", "pointer");
+		});
+		//마우스 아웃되면 다시 시작
+		banner.mouseout(function(){
+			rollingId = setInterval(function() { rollingStart(); }, 3000);
+			$(this).css("cursor", "default");
+		});
+		
+		function rollingStart() {
+			$banner.css("width", $bannerWidth * $bannerLength + "px");
+			$banner.css("height", $bannerHeight + "px");
+			//alert(bannerHeight);
+			//배너의 좌측 위치를 옮겨 준다.
+			$banner.animate({left: - $bannerWidth + "px"}, 1500, function() { //숫자는 롤링 진행되는 시간이다.
+				//첫번째 이미지를 마지막 끝에 복사(이동이 아니라 복사)해서 추가한다.
+				$(this).append("<li>" + $(this).find("li:first").html() + "</li>");
+				//뒤로 복사된 첫번재 이미지는 필요 없으니 삭제한다.
+				$(this).find("li:first").remove();
+				//다음 움직임을 위해서 배너 좌측의 위치값을 초기화 한다.
+				$(this).css("left", 0);
+				//이 과정을 반복하면서 계속 롤링하는 배너를 만들 수 있다.
+			});
+		}
+	}); 
+
+	
+
+	
+</script>
+  
   <script src="./assets/vendor/jquery/jquery.min.js"></script>
   <script src="./assets/vendor/popper/popper.min.js"></script>
   <script src="./assets/vendor/bootstrap/bootstrap.min.js"></script>

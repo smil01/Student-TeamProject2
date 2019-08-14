@@ -93,7 +93,16 @@ public class memberDAO {
 
 			String sql = "SELECT * FROM MEMBERS WHERE ID = ? AND PW = ?";
 			
+			pst = conn.prepareStatement(sql);
 			
+			pst.setString(1, dto.getId());
+			pst.setString(2, dto.getPw());
+			
+			rs = pst.executeQuery();
+			
+			if(rs.next()) {
+				return new memberDTO(rs.getString(1), rs.getString(2), rs.getString(3));
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
