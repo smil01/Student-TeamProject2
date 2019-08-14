@@ -44,7 +44,7 @@ color:black;
       <div class="container">
         <a class="navbar-brand mr-lg-5" href="./index.html">
           <img alt="image" src="./assets/img/brand/white.png">
-        </a>z
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -134,7 +134,18 @@ color:black;
         <form action="#">
         <div>
         <p style="color:white;text-align:center;"><strong>선거 지역 및 기본정보를 선택해주세요 </strong></p>
-        <p style="text-align: center;"><img src="assets/img/theme/webmap.PNG"></p>
+        <p style="text-align: center;">
+        <img id="map" src="./assets/img/theme/seoul_map.png" border="0" width="700" height="470" orgWidth="700" orgHeight="470" usemap="#image-maps-2019-08-14-025025" alt="" />
+		<map name="image-maps-2019-08-14-025025" id="ImageMapsCom-image-maps-2019-08-14-025025">
+		<area shape="rect" coords="698,468,700,470" alt="Image Map" style="outline:none;" title="Image Map" href="http://www.image-maps.com/index.php?aff=mapped_users_[msg]Er" />
+		<area  alt="노원구" title="노원구" href="#" shape="poly" coords="467,19,464,23,456,23,453,29,447,29,438,35,436,35,435,44,427,63,437,77,441,90,443,105,442,114,436,117,432,114,431,111,425,116,423,129,431,137,433,143,442,151,448,156,459,154,464,153,480,142,492,151,502,144,498,138,515,124,508,108,498,105,491,108,487,106,490,95,475,87,475,82,488,81,492,79,487,62,487,54,482,50,490,41,490,35,485,30,475,32,471,31,477,24,475,21" style="outline:none;" target="_self"  id='nowon'/>
+		<area  alt="중랑구" title="중랑구" href="#" shape="poly" coords="493,154,481,146,462,157,464,166,462,176,458,182,455,184,464,203,471,216,470,227,478,225,487,231,497,224,496,214,507,207,510,195,519,188,514,180,518,172,523,171,515,164,519,150,505,145" style="outline:none;" target="_self"  id='jungrang'/>
+		<area  alt="도봉구" title="도봉구" href="#" shape="poly" coords="423,62,432,43,431,38,435,28,426,27,421,23,409,29,402,13,393,14,387,9,377,15,379,24,374,28,374,39,373,44,382,51,391,61,382,87,384,96,394,98,405,106,413,120,420,126,427,107,433,106,437,113,441,108,437,84" style="outline:none;" target="_self"  id='dobong'/>
+		<area  alt="강동구" title="강동구" href="#" shape="poly" coords="591,209,583,213,554,229,543,231,538,236,516,244,517,255,519,264,514,274,527,279,529,290,521,297,529,306,536,305,555,315,558,312,558,306,566,302,566,289,584,267,594,271,605,267,604,244,597,228,593,224,597,216" style="outline:none;" target="_self"  id='gangdong'/>
+		<area  alt="강북구" title="강북구" href="#" shape="poly" coords="370,41,364,40,360,44,352,45,349,50,355,60,356,71,349,78,335,86,341,99,345,115,352,122,362,125,366,133,377,141,378,153,389,152,394,161,402,159,407,163,419,147,424,146,429,137,407,119,402,107,393,101,382,98,378,90,388,62,378,57,378,52" style="outline:none;" target="_self" id='gangbuc'/>
+		</map>>
+		</p>
+		<p id='text' style="color:white;text-align:center;"><strong>위 지도에서 지역을 클릭해주세요!</strong></p>
         <p style="color:white;text-align:center;"><strong>요일을 선택해주세요 : </strong>
         <select>
         	<option>월</option>
@@ -197,6 +208,7 @@ color:black;
         </div>
 		</form>
   <!-- Core -->
+
   <script src="./assets/vendor/jquery/jquery.min.js"></script>
   <script src="./assets/vendor/popper/popper.min.js"></script>
   <script src="./assets/vendor/bootstrap/bootstrap.min.js"></script>
@@ -207,6 +219,39 @@ color:black;
   <script src="./assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
   <!-- Argon JS -->
   <script src="./assets/js/argon.js?v=1.1.0"></script>
+    <script>
+    var ex = document.getElementById('nowon');
+    var ex1 = document.getElementById('jungrang');
+    var ex2 = document.getElementById('dobong');
+    var ex3 = document.getElementById('gangdong');
+    var ex4 = document.getElementById('gangbuc');
+  	ex.addEventListener('click',function(){
+  		
+  		var text = document.getElementById('text').innerHTML=$("#nowon").attr("alt")+"지역을 선택하셨습니다.";
+  		
+  	});
+  	ex1.addEventListener('click',function(){
+  		
+  		var text = document.getElementById('text').innerHTML=$("#jungrang").attr("alt")+"지역을 선택하셨습니다.";
+  		
+  	});
+  	ex2.addEventListener('click',function(){
+  		
+  		var text = document.getElementById('text').innerHTML=$("#dobong").attr("alt")+"지역을 선택하셨습니다.";
+  		
+  	});
+  	ex3.addEventListener('click',function(){
+  		
+  		var text = document.getElementById('text').innerHTML=$("#gangdong").attr("alt")+"지역을 선택하셨습니다.";
+  		
+  	});
+  	ex4.addEventListener('click',function(){
+  		
+  		var text = document.getElementById('text').innerHTML=$("#gangbuc").attr("alt")+"지역을 선택하셨습니다.";
+  		
+  	});
+  	
+  </script>
 </body>
 
 </html>
