@@ -15291,6 +15291,7 @@ button.section-darker:focus
 .row.row-grid > [class*='col-'] + [class*='col-']
 {
     margin-top: 3rem;
+    margin-bottom: 3rem;
 }
 
 @media (min-width: 992px)
