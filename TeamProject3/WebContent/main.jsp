@@ -49,7 +49,7 @@
     <nav id="navbar-main" class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light headroom">
       <div class="container">
         <a class="navbar-brand mr-lg-5" href="./index.html">
-          <img alt="image" src="./assets/img/brand/white.png">
+          <img alt="image" src="./assets/img/brand/main.png">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -116,8 +116,8 @@
               <div class="dropdown-menu">
                 <a href="./examples/landing.html" class="dropdown-item">Landing</a>
                 <a href="./examples/profile.html" class="dropdown-item">Profile</a>
-                <a href="login.jsp" class="dropdown-item">로그인</a>
-                <a href="register.jsp" class="dropdown-item">가입하기</a>
+                <a href="login.do" class="dropdown-item">로그인</a>
+                <a href="register.do" class="dropdown-item">가입하기</a>
               </div>
             </li>
           </ul>
@@ -162,14 +162,14 @@
           <div class="col px-0">
             <div class="row align-items-center justify-content-center">
               <div class="col-lg-6 text-center">
-                <img alt="image" src="./assets/img/brand/white.png" style="width: 200px;" class="img-fluid">
+                <img alt="image" src="./assets/img/brand/main.png" style="width: 200px;" class="img-fluid">
                 <p class="lead text-white">선거유세지역 추천 웹사이트
                 </p>
                 <div class="btn-wrapper mt-5">
 				<br><br><br>
 				
-				<button type="button" class="btn btn-default btn-lg"><a href="register.jsp">가입하기</a></button>
-				<button type="button" class="btn btn-default btn-lg"><a href="login.jsp">로그인</a></button>              
+				<button type="button" class="btn btn-secondary btn-lg"><a href="register.jsp">가입하기</a></button>
+				<button type="button" class="btn btn-secondary btn-lg"><a href="login.jsp">로그인</a></button>              
 
               </div>
             </div>
@@ -211,8 +211,8 @@
               <div class="icon icon-lg icon-shape icon-shape-warning shadow rounded-circle mb-5">
                 <i class="ni ni-air-baloon"></i>
               </div>
-              <h3>Team Signer의 목표</h3>
-              <p class="lead"> 팀 설립 목표 내용 입력</p>
+            
+              <p class="lead"></p>
               <p>팀 설립 목표 내용 입력</p>
               <p>팀 설립 목표 내용 입력</p>
               <a href="#" class="font-weight-bold text-warning mt-5">We Support All Candidates</a>
@@ -229,7 +229,7 @@
               
             </div>
           </div>
-          <div class="col-lg-6 order-lg-1">
+          <div class="col-lg-6 order-lg-1" >
                  <div class="slide">
     				<input type="radio" name="pos" id="pos1" checked>
 				    <input type="radio" name="pos" id="pos2">
