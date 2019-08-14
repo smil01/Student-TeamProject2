@@ -113,7 +113,7 @@
                 <div class="text-center text-muted mb-4">
                   <small></small>
                 </div>
-                <form action="" method="post">
+                <form action="loginOp.do" method="post">
                   <div class="form-group mb-3">
                     <div class="input-group input-group-alternative">
                       <div class="input-group-prepend">
@@ -136,7 +136,7 @@
                   </div>
                   <div class="text-center">
                   
-                    <input type="submit"  class="btn btn-lg btn-primary" disabled value="로그인">
+                    <input type="submit"  class="btn btn-lg btn-primary" value="로그인">
                 
                   </div>
                    
