@@ -86,4 +86,20 @@ public class memberDAO {
 
 		return false;
 	}
+	
+	public memberDTO select(memberDTO dto) {
+		try {
+			getCon();
+
+			String sql = "SELECT * FROM MEMBERS WHERE ID = ? AND PW = ?";
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+
+		return null;
+	}
 }

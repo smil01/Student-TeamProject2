@@ -7,22 +7,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import main.front.CommandService;
-import main.member.DAO.memberDAO;
-import main.member.DTO.memberDTO;
 
-public class RegisterOPService implements CommandService {
+public class LoginService implements CommandService{
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		memberDTO input = new memberDTO(request.getParameter("name"), request.getParameter("id"),
-				request.getParameter("pw"));
-
-		return memberDAO.getDao().insert(input) ? "main.do" : "main.do"; // 회원가입 성공 : 회원가입 실패
+		return "login.jsp";
 	}
 
 	@Override
 	public boolean getType() {
-		return true;
+		return false;
 	}
-
 }
