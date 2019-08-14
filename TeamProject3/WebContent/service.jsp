@@ -55,7 +55,7 @@
 							<div class="icon icon-shape  rounded-circle text-white">
 								<i class="ni ni-check-bold"></i>
 							</div>
-							<a href="#">선거유세지역 보기</a>
+							<a href="Content">선거유세지역 보기</a>
 						</div>
 						<br> <br>
 						<div>
