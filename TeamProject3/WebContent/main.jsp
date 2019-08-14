@@ -168,8 +168,8 @@
                 <div class="btn-wrapper mt-5">
 				<br><br><br>
 				
-				<button type="button" class="btn btn-secondary btn-lg"><a href="register.jsp">가입하기</a></button>
-				<button type="button" class="btn btn-secondary btn-lg"><a href="login.jsp">로그인</a></button>              
+				<button type="button" class="btn btn-secondary btn-lg"><a href="register.do">가입하기</a></button>
+				<button type="button" class="btn btn-secondary btn-lg"><a href="login.do">로그인</a></button>              
 
               </div>
             </div>
