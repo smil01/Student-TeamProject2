@@ -30,7 +30,7 @@ table {
 			<td align="center" width="50%">
 				<div id="map" style="width: 100%; height: 100%;"></div>
 			</td>
-			<td align="center" width="50%">워드클라우드 장소</td>
+			<td align="center" width="50%"><img src=""></td>
 		</tr>
 	</table>
 
