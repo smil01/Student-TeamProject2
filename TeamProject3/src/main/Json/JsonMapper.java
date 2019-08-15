@@ -9,8 +9,8 @@ public class JsonMapper {
 	public static HashMap<String, JsonService> getMap() {
 		HashMap<String, JsonService> map = new HashMap<String, JsonService>();
 		
-		map.put("test.json", new testJson());
-		map.put("map.json", new mapJson());
+		map.put("test.jsons", new testJson());
+		map.put("map.jsons", new mapJson());
 		
 		return map;
 	}
