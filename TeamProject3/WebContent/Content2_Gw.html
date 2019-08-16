@@ -15,12 +15,12 @@
   <!-- Argon CSS -->
   <link type="text/css" href="./assets/css/argon.css?v=1.1.0" rel="stylesheet">
 <!--  Custom css -->
-		<link  id='GoogleFontsLink' href='https://fonts.googleapis.com/css?family=Indie Flower' rel='stylesheet' type='text/css'><link  id='GoogleFontsLink' href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet' type='text/css'>
+		<link  id='GoogleFontsLink' href='https://fonts.googleapis.com/css?family=Teko' rel='stylesheet' type='text/css'><link  id='GoogleFontsLink' href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet' type='text/css'><link  id='GoogleFontsLink' href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
 		<script>
  WebFontConfig = {
  google: 
-{families: ["Indie Flower","Open Sans",]},active: function() { 
- DrawTheChart(ChartData,ChartOptions,"chart-01","Line")}
+{families: ["Teko","Open Sans","Abel",]},active: function() { 
+ DrawTheChart(ChartData,ChartOptions,"chart-01","HorizontalBar")}
 };
 		</script>
 		<script asyn src="https://livegap.com/charts/js/webfont.js">
@@ -29,7 +29,29 @@
 function DrawTheChart(ChartData,ChartOptions,ChartId,ChartType){
 eval('var myLine = new Chart(document.getElementById(ChartId).getContext("2d")).'+ChartType+'(ChartData,ChartOptions);document.getElementById(ChartId).getContext("2d").stroke();')
 }
-		</script>
+		</script>	
+		  <script type="text/javascript" src="./assets/js/jquery-3.3.1.min.js"></script>
+  		  <script type="text/javascript" src="./assets/js/jquery.maphilight.js"></script>
+
+<script type="text/javascript">
+        $(function () {
+            $('area').click(function (event) {
+                var map = document.getElementById('map');                
+                var areas = map.getElementsByTagName('area');
+                for (var i = 0; i < areas.length; i++) {
+                    var area = areas[i];
+                    var id = area.id;
+                    var data = $('#' + id).data('maphilight') || {};
+                    if (area.id == $(this)[0].id)
+                        data.fillColor = '02FC1F'; // Sample color           
+                    else data.fillColor = '000000'; // Sample color           
+                    $('#' + id).data('maphilight', data).trigger('alwaysOn.maphilight');
+                }
+            });
+            $('.map').maphilight({ strokeColor: '808080', strokeWidth: 0, fill: '000000', fillColor: '000000', alwaysOn: true ,fillOpacity: 1 });
+        });
+    </script>
+
 </head>
 
 <body>
@@ -115,37 +137,74 @@ eval('var myLine = new Chart(document.getElementById(ChartId).getContext("2d")).
     </nav>
   </header>
   <main>
-
+<!-- 1번쨰 단  -->
     <div class="position-relative">
       <!-- Hero for FREE version -->
       <section class="section section-lg section-hero section-shaped">
         <!-- Background circles -->
         <div class="shape shape-style-1 shape-primary">
         </div>
-        
-        <div style=" margin-left: 300px; display: inline-block;"> <!-- style="width: 800px; height: 500px; float: left; background-color: rgba( 00, 00, 00, 0.4); margin-left: 30px;" -->
-        	<img src="./assets/img/theme/nowongu.png"><p style="color: white;">클러스트 영역</p>
-        	        
-        </div>
-        
-        
-        <div style="width: 800px; height: 500px; float: right; margin-right: 300px; display: inline-block;">
-        	<canvas  id="chart-01" width="692" height="392"  style="background-color:rgba(31,31,31,1);border:4px rgba(140,145,6,1) solid;border-radius:0px;width:692px;height:392px;padding-left:0px;padding-right:0px;padding-top:0px;padding-bottom:0px"></canvas>
-			<p style="color: white;">그래프영역</p>
-        
-        </div>
-       
-			
-		
 
-        
+
+
+
+		<h1 style="text-align: center; color: white;">이곳은 클러스터 페이지 입니다.</h1>
+		
+ 		<div style="margin-left: 250px; position: relative;">
+
+		<img class="map" id="Image-Maps-Com-image-maps-2019-08-15-082917" src="./assets/img/theme/nowongu2.png" border="0" width="483" height="499" orgWidth="483" orgHeight="499" usemap="#image-maps-2019-08-15-082917" alt=""/>
+			<map  name="image-maps-2019-08-15-082917" id="ImageMapsCom-image-maps-2019-08-15-082917">
+				<area  id ="sang2" alt="상계2똥" title="" href="#" shape="poly" coords="55,150,93,314,105,330,116,337,120,315,129,298,140,290,141,284,153,282,169,269,177,268,186,260,191,250,192,245,197,241,200,240,199,230,203,221,212,214,215,211,208,204.00000762939453,208,198.00000762939453,194,192.00000762939453,190,181.00000762939453,186,176.00000762939453,171,170.00000762939453,167,162.00000762939453,161,146.00000762939453,143,147.00000762939453,117,146.00000762939453,110,156.00000762939453,104,162.00000762939453" style="outline:none;" target="_self" />
+				<area  id ="sang1" alt="상계1동" title="" href="#" shape="poly" coords="54,148,111,155,117,144,160,145,169,138,187,138,208,129,212,122,208,114,222,97,222,79,236,72,244,70,251,62,263,57,272,60,285,53,293,45,277,14,264,11,229,15,208,16,195,21,179,18,164,6,152,8,142,16,124,36,97,37,78,44,73,67,81,85,69,94,57,121,57,131" style="outline:none;" target="_self"     />
+				<area  id ="sang4" alt="상계4동" title="" href="#" shape="poly" coords="291,46.000003814697266,279,59.000003814697266,267,61.000003814697266,253,61.000003814697266,241,75.00000381469727,228,76.00000381469727,223,83.00000381469727,224,100.00000381469727,211,113.00000381469727,213,127.00000381469727,209,129.00000381469727,219,142.00000381469727,219,157.00000381469727,213,171.00000381469727,215,181.00000381469727,235,170.00000381469727,248,159.00000381469727,263,158.00000381469727,279,168.00000381469727,306,189.00000381469727,321,186.00000381469727,343,193.00000381469727,343,184.00000381469727,349,180.00000381469727,351,168.00000381469727,361,154.00000381469727,334,128.00000381469727,333,119.00000381469727,338,103.00000381469727,342,90.00000381469727,359,87.00000381469727,362,77.00000381469727,361,68.00000381469727,322,59.000003814697266,300,56.000003814697266" style="outline:none;" target="_self"     />
+				<area  id ="sang3" alt="상계3동" title="" href="#" shape="poly" coords="333,268,302,262,279,266,251,257,242,261,230,257,224,250,214,251,209,243,196,243,200,239,199,231,211,212,213,206,211,196,205,195,198,193,195,187,193,177,189,172,171,168,169,159,167,153,165,145,168,139,187,141,202,129,215,141,214,154,212,168,210,181,219,183,232,177,246,162,257,160,270,167,288,174,300,189,312,192,325,190,337,195,347,196,343,213,333,221,327,233,327,246,339,263" style="outline:none;" target="_self"     />
+				<area  id ="moon" alt="월계동" title="" href="#" shape="poly" coords="93,313,85,320,73,308,68,294,62,290,57,303,46,313,34,320,35,333,23,339,19,353,13,362,15,377,31,391,42,391,64,413,62,423,81,428,85,440,93,449,104,452,113,461,128,471,138,475,158,470,171,466,187,478,195,478,196,466,190,444,180,419,169,400,160,401,155,389,148,373,127,348" style="outline:none;" target="_self"     />
+				<area  id ="jung" alt="중계동" title="" href="#" shape="poly" coords="127,342.00001525878906,133,339.00001525878906,144,342.00001525878906,158,334.00001525878906,171,336.00001525878906,177,328.00001525878906,184,326.00001525878906,187,313.00001525878906,192,304.00001525878906,199,297.00001525878906,222,291.00001525878906,234,310.00001525878906,257,316.00001525878906,267,329.00001525878906,276,331.00001525878906,276,339.00001525878906,296,333.00001525878906,314,332.00001525878906,332,329.00001525878906,343,320.00001525878906,348,313.00001525878906,331,290.00001525878906,332,283.00001525878906,340,269.00001525878906,319,268.00001525878906,302,263.00001525878906,282,265.00001525878906,251,258.00001525878906,229,256.00001525878906,223,251.00001525878906,213,250.00001525878906,208,243.00001525878906,195,244.00001525878906,193,242.00001525878906,176,271.00001525878906,167,271.00001525878906,140,287.00001525878906,129,301.00001525878906,121,315.00001525878906,115,332.00001525878906,115,338.00001525878906,124,346.00001525878906" style="outline:none;" target="_self"     />
+				<area  id ="ha" alt="하계동" title="" href="#" shape="poly" coords="166,396.00001525878906,188,384.00001525878906,208,383.00001525878906,232,372.00001525878906,240,356.00001525878906,258,349.00001525878906,263,336.00001525878906,277,338.00001525878906,275,330.00001525878906,262,325.00001525878906,255,315.00001525878906,228,306.00001525878906,219,291.00001525878906,196,299.00001525878906,184,317.00001525878906,182,331.00001525878906,177,329.00001525878906,168,337.00001525878906,159,335.00001525878906,154,334.00001525878906,142,342.00001525878906,130,340.00001525878906,125,344.00001525878906,144,362.00001525878906,151,382.00001525878906,163,399.00001525878906" style="outline:none;" target="_self"     />
+				<area  id ="gong" alt="공릉동" title="" href="#" shape="poly" coords="166,399,187,427,196,461,219,463,230,454,255,452,265,446,286,450,302,449,317,462,336,463,344,458,356,458,370,452,389,456,404,455,407,441,413,424,443,396,460,374,460,357,445,352,439,342,435,324,418,318,396,317,382,311,347,314,337,327,295,333,287,341,263,338,254,355,238,360,227,376,187,386" style="outline:none;" target="_self"     />
+			</map>
+			<div style="left: 70px; top:50px; width: 180px; height:158px; bottom: 140px; font-size: 1.8em; font-weight: bold; position: absolute;  text-align: center; margin: 0px; padding: 0px;">상계1</div>
+			<div style="left: 50px; top:190px; width: 180px; height:158px; bottom: 140px; font-size: 1.8em; font-weight: bold; position: absolute;  text-align: center; margin: 0px; padding: 0px;">상계2</div>
+			<div style="left: 190px; top:90px; width: 180px; height:158px; bottom: 140px; font-size: 1.8em; font-weight: bold; position: absolute;  text-align: center; margin: 0px; padding: 0px;">상계4</div>
+			<div style="left: 180px; top:190px; width: 180px; height:158px; bottom: 140px; font-size: 1.8em; font-weight: bold; position: absolute;  text-align: center; margin: 0px; padding: 0px;">상계3</div>
+			<div style="left: 200px; top:260px; width: 180px; height:158px; bottom: 140px; font-size: 1.8em; font-weight: bold; position: absolute;  text-align: center; margin: 0px; padding: 0px;">중계동</div>
+			<div style="left: 130px; top:320px; width: 180px; height:158px; bottom: 140px; font-size: 1.8em; font-weight: bold; position: absolute;  text-align: center; margin: 0px; padding: 0px;">하계동</div>
+			<div style="left: 230px; top:350px; width: 180px; height:158px; bottom: 140px; font-size: 1.8em; font-weight: bold; position: absolute;  text-align: center; margin: 0px; padding: 0px;">공륭동</div>
+			<div style="left: 30px; top:380px; width: 180px; height:158px; bottom: 140px; font-size: 1.8em; font-weight: bold; position: absolute;  text-align: center; margin: 0px; padding: 0px;">월계동</div>
+
+
+		<div style="float: right; margin-right: 300px; margin-top: 100px; " >
+		<canvas  id="chart-01" width="700" height="400"  style="background-color:rgba(255,255,255,1.00);border-radius:0px;width:700px;height:400px;padding-left:0px;padding-right:0px;padding-top:0px;padding-bottom:0px"></canvas>
+		</div>
+
+
+
+				
+	
+		
+			
+		</div>
+
+      
+
+  
         </section>
-        </div>
+
+    </div>
+
+				 <div style="float: left;">
+			<img src="./assets/img/theme/back.png" style="width: 300px; height: 300px;">
+		</div>
+		<div style="float: right;">
+			<a href="http://localhost:8084/TeamProject3/Content3_Gw.html"><img src="./assets/img/theme/next.png" style="width: 300px; height: 300px;"></a>
+		</div>	
+
+             </div>
         </main>
           <!-- Core -->
 
   <script src="./assets/vendor/jquery/jquery.min.js"></script>
-  <script src="./assets/vendor/popper/popper.min.js"></script>
+    <script src="./assets/vendor/popper/popper.min.js"></script>
   <script src="./assets/vendor/bootstrap/bootstrap.min.js"></script>
   <script src="./assets/vendor/headroom/headroom.min.js"></script>
   <script src="./assets/js/jquery.maphilight.min.js"></script>
@@ -153,11 +212,18 @@ eval('var myLine = new Chart(document.getElementById(ChartId).getContext("2d")).
   <script src="./assets/vendor/onscreen/onscreen.min.js"></script>
   <script src="./assets/vendor/nouislider/js/nouislider.min.js"></script>
   <script src="./assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+  
   <!-- Argon JS -->
   <script src="./assets/js/argon.js?v=1.1.0"></script>
-  <!-- custom script -->
-  <script> function MoreChartOptions(){} var ChartData = {labels : ["January",
-"February","March","April","May","June","July",],datasets : [{fillColor :"rgba(52,152,219,1)",strokeColor : "rgba(52,152,219,0.5)",pointColor : "rgba(255,255,255,1.00)",markerShape :"circle",pointStrokeColor : "rgba(52,152,219,1)",data : [65,8,90,81,56,55,40,],title:"2013"},{fillColor :"rgba(46,204,113,1)",strokeColor : "rgba(46,204,112,0.59)",pointColor : "rgba(255,255,255,1.00)",markerShape :"circle",pointStrokeColor : "rgba(46,204,113,1)",data : [21,48,40,19,96,27,100,],title:"2014"},]};ChartOptions= {decimalSeparator:".",thousandSeparator:",",spaceLeft:12,spaceRight:12,spaceTop:12,spaceBottom:12,scaleLabel:"<%=value+''%>",yAxisMinimumInterval:'none',scaleShowLabels:true,scaleShowLine:true,scaleLineStyle:"solid",scaleLineWidth:2,scaleLineColor:"rgba(140,145,6,0.37)",scaleOverlay :false,scaleOverride :false,scaleSteps:10,scaleStepWidth:10,scaleStartValue:0,inGraphDataShow:true,inGraphDataTmpl:'<%=v3%>',inGraphDataFontFamily:"'Indie Flower'",inGraphDataFontStyle:"normal bold",inGraphDataFontColor:"rgba(219,219,219,1)",inGraphDataFontSize:15,inGraphDataPaddingX:0,inGraphDataPaddingY:5,inGraphDataAlign:"center",inGraphDataVAlign:"bottom",inGraphDataXPosition:2,inGraphDataYPosition:3,inGraphDataAnglePosition:2,inGraphDataRadiusPosition:2,inGraphDataRotate:0,inGraphDataPaddingAngle:0,inGraphDataPaddingRadius:0, inGraphDataBorders:false,inGraphDataBordersXSpace:1,inGraphDataBordersYSpace:1,inGraphDataBordersWidth:1,inGraphDataBordersStyle:"solid",inGraphDataBordersColor:"rgba(0,0,0,1)",legend:true,maxLegendCols:5,legendBlockSize:15,legendFillColor:'rgba(255,255,255,0.00)',legendColorIndicatorStrokeWidth:1,legendPosX:-2,legendPosY:4,legendXPadding:0,legendYPadding:0,legendBorders:false,legendBordersWidth:1,legendBordersStyle:"solid",legendBordersColors:"rgba(102,102,102,1)",legendBordersSpaceBefore:5,legendBordersSpaceLeft:5,legendBordersSpaceRight:5,legendBordersSpaceAfter:5,legendSpaceBeforeText:5,legendSpaceLeftText:5,legendSpaceRightText:5,legendSpaceAfterText:5,legendSpaceBetweenBoxAndText:5,legendSpaceBetweenTextHorizontal:5,legendSpaceBetweenTextVertical:5,legendFontFamily:"'Indie Flower'",legendFontStyle:"normal normal",legendFontColor:"rgba(59,59,59,1)",legendFontSize:21,yAxisFontFamily:"'Indie Flower'",yAxisFontStyle:"normal bold",yAxisFontColor:"rgba(102,102,102,1)",yAxisFontSize:18,yAxisLabel : "Y Axis",yAxisUnitFontFamily:"'Indie Flower'",yAxisUnitFontStyle:"normal bold",yAxisUnitFontColor:"rgba(102,102,102,1)",yAxisUnitFontSize:16,yAxisUnit : "Unit",showYAxisMin:false,rotateLabels:"smart",xAxisBottom:true,yAxisLeft:true,yAxisRight:false,graphTitleSpaceBefore:5,graphTitleSpaceAfter:-2, graphTitleBorders:false,graphTitleBordersXSpace:1,graphTitleBordersYSpace:1,graphTitleBordersWidth:1,graphTitleBordersStyle:"solid",graphTitleBordersColor:"rgba(0,0,0,1)",graphTitle : "Chart Title",graphTitleFontFamily:"'Indie Flower'",graphTitleFontStyle:"normal normal",graphTitleFontColor:"rgba(140,145,6,1)",graphTitleFontSize:32,scaleFontFamily:"'Indie Flower'",scaleFontStyle:"normal normal",scaleFontColor:"rgba(140,145,6,1)",scaleFontSize:16,pointLabelFontFamily:"'Open Sans'",pointLabelFontStyle:"normal normal",pointLabelFontColor:"rgba(102,102,102,1)",pointLabelFontSize:12,angleShowLineOut:true,angleLineStyle:"solid",angleLineWidth:1,angleLineColor:"rgba(0,0,0,0.1)",percentageInnerCutout:50,scaleShowGridLines:true,scaleGridLineStyle:"solid",scaleGridLineWidth:1,scaleGridLineColor:"rgba(140,145,6,0.13)",scaleXGridLinesStep:1,scaleYGridLinesStep:0,segmentShowStroke:true,segmentStrokeStyle:"solid",segmentStrokeWidth:2,segmentStrokeColor:"rgba(255,255,255,1.00)",datasetStroke:true,datasetFill : false,datasetStrokeStyle:"solid",datasetStrokeWidth:2,bezierCurve:false,bezierCurveTension :0.4,pointDotStrokeStyle:"dotted",pointDotStrokeWidth : 1,pointDotRadius : 5,pointDot : true,scaleTickSizeBottom:5,scaleTickSizeTop:5,scaleTickSizeLeft:5,scaleTickSizeRight:5,barShowStroke : false,barBorderRadius:0,barStrokeStyle:"solid",barStrokeWidth:1,barValueSpacing:15,barDatasetSpacing:0,scaleShowLabelBackdrop :true,scaleBackdropColor:'rgba(255,255,255,0.75)',scaleBackdropPaddingX :2,scaleBackdropPaddingY :2,animationEasing:'easeInSine',animateRotate:true,animateScale:false,animationByDataset:true,animationLeftToRight:true,animationSteps:100,animation : true,onAnimationComplete : function(){MoreChartOptions()}};
- DrawTheChart(ChartData,ChartOptions,"chart-01","Line");</script>
+
+		<script> function MoreChartOptions(){} var ChartData = {labels : ["1st",
+"2st","3st","4st","5st",],datasets : [{fillColor :"rgba(52,152,219,1)",strokeColor : "rgba(52,152,219,1)",pointColor : "rgba(52,152,219,1)",markerShape :"circle",pointStrokeColor : "rgba(255,255,255,1.00)",data : [100,80,70,60,56,],title:"2013"},]};ChartOptions= {decimalSeparator:".",thousandSeparator:",",spaceLeft:20,spaceRight:20,spaceTop:20,spaceBottom:20,scaleLabel:"<%=value+''%>",yAxisMinimumInterval:'none',scaleShowLabels:true,scaleShowLine:true,scaleLineStyle:"solid",scaleLineWidth:1,scaleLineColor:"rgba(0,0,0,0.6)",scaleOverlay :false,scaleOverride :false,scaleSteps:10,scaleStepWidth:10,scaleStartValue:0,inGraphDataShow:true,inGraphDataTmpl:'<%=v3%>',inGraphDataFontFamily:"'Abel'",inGraphDataFontStyle:"normal normal",inGraphDataFontColor:"rgba(15,15,15,1)",inGraphDataFontSize:14,inGraphDataPaddingX:13,inGraphDataPaddingY:0,inGraphDataAlign:"center",inGraphDataVAlign:"middle",inGraphDataXPosition:3,inGraphDataYPosition:2,inGraphDataAnglePosition:2,inGraphDataRadiusPosition:2,inGraphDataRotate:0,inGraphDataPaddingAngle:0,inGraphDataPaddingRadius:0, inGraphDataBorders:false,inGraphDataBordersXSpace:1,inGraphDataBordersYSpace:1,inGraphDataBordersWidth:1,inGraphDataBordersStyle:"solid",inGraphDataBordersColor:"rgba(0,0,0,1)",legend:true,maxLegendCols:5,legendBlockSize:15,legendFillColor:'rgba(255,255,255,0.00)',legendColorIndicatorStrokeWidth:1,legendPosX:-2,legendPosY:4,legendXPadding:0,legendYPadding:0,legendBorders:false,legendBordersWidth:1,legendBordersStyle:"solid",legendBordersColors:"rgba(102,102,102,1)",legendBordersSpaceBefore:5,legendBordersSpaceLeft:5,legendBordersSpaceRight:5,legendBordersSpaceAfter:5,legendSpaceBeforeText:5,legendSpaceLeftText:5,legendSpaceRightText:5,legendSpaceAfterText:5,legendSpaceBetweenBoxAndText:5,legendSpaceBetweenTextHorizontal:5,legendSpaceBetweenTextVertical:5,legendFontFamily:"'Open Sans'",legendFontStyle:"normal normal",legendFontColor:"rgba(0,0,0,1)",legendFontSize:15,showYAxisMin:false,rotateLabels:"smart",xAxisBottom:true,yAxisLeft:true,yAxisRight:false,graphTitleSpaceBefore:5,graphTitleSpaceAfter:0, graphTitleBorders:false,graphTitleBordersXSpace:1,graphTitleBordersYSpace:1,graphTitleBordersWidth:1,graphTitleBordersStyle:"solid",graphTitleBordersColor:"rgba(0,0,0,1)",graphTitle : "Chart Title",graphTitleFontFamily:"'Open Sans'",graphTitleFontStyle:"normal normal",graphTitleFontColor:"rgba(52,152,219,1)",graphTitleFontSize:26,graphSubTitleSpaceBefore:0,graphSubTitleSpaceAfter:5, graphSubTitleBorders:false,graphSubTitleBordersXSpace:1,graphSubTitleBordersYSpace:1,graphSubTitleBordersWidth:1,graphSubTitleBordersStyle:"solid",graphSubTitleBordersColor:"rgba(0,0,0,1)",graphSubTitle : "Add SubTitle Here",graphSubTitleFontFamily:"'Teko'",graphSubTitleFontStyle:"normal normal",graphSubTitleFontColor:"rgba(102,102,102,1)",graphSubTitleFontSize:16,scaleFontFamily:"'Teko'",scaleFontStyle:"normal normal",scaleFontColor:"rgba(0,0,0,1)",scaleFontSize:15,pointLabelFontFamily:"'Open Sans'",pointLabelFontStyle:"normal normal",pointLabelFontColor:"rgba(102,102,102,1)",pointLabelFontSize:12,angleShowLineOut:true,angleLineStyle:"solid",angleLineWidth:1,angleLineColor:"rgba(0,0,0,0.1)",percentageInnerCutout:50,scaleShowGridLines:true,scaleGridLineStyle:"solid",scaleGridLineWidth:1,scaleGridLineColor:"rgba(0,0,0,0.1)",scaleXGridLinesStep:1,scaleYGridLinesStep:3,segmentShowStroke:true,segmentStrokeStyle:"solid",segmentStrokeWidth:2,segmentStrokeColor:"rgba(255,255,255,1.00)",datasetStroke:true,datasetFill : true,datasetStrokeStyle:"solid",datasetStrokeWidth:2,bezierCurve:true,bezierCurveTension :0.4,pointDotStrokeStyle:"solid",pointDotStrokeWidth : 1,pointDotRadius : 3,pointDot : true,scaleTickSizeBottom:5,scaleTickSizeTop:5,scaleTickSizeLeft:5,scaleTickSizeRight:5,barShowStroke : true,barBorderRadius:5,barStrokeStyle:"solid",barStrokeWidth:1,barValueSpacing:5,barDatasetSpacing:2,scaleShowLabelBackdrop :true,scaleBackdropColor:'rgba(255,255,255,0.75)',scaleBackdropPaddingX :2,scaleBackdropPaddingY :2,animationEasing:'linear',animateRotate:true,animateScale:false,animationByDataset:true,animationLeftToRight:true,animationSteps:80,animation : true,onAnimationComplete : function(){MoreChartOptions()}};
+ DrawTheChart(ChartData,ChartOptions,"chart-01","HorizontalBar");</script>
+ 
+ <script type="text/javascript">
+ var 
+ 
+ 
+ </script>
 </body>
 </html>

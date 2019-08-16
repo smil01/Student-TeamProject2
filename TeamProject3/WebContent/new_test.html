@@ -1,0 +1,242 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Map</title>
+  <!-- Favicon -->
+  <link href="./assets/img/brand/favicon.png" rel="icon" type="image/png">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+  <!-- Icons -->
+  <link href="./assets/vendor/nucleo/css/nucleo.css" rel="stylesheet">
+  <link href="./assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <!-- Argon CSS -->
+  <link type="text/css" href="./assets/css/argon.css?v=1.1.0" rel="stylesheet">
+<!--  Custom css -->
+		<link  id='GoogleFontsLink' href='https://fonts.googleapis.com/css?family=Indie Flower' rel='stylesheet' type='text/css'><link  id='GoogleFontsLink' href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet' type='text/css'>
+		<script>
+ WebFontConfig = {
+ google: 
+{families: ["Indie Flower","Open Sans",]},active: function() { 
+ DrawTheChart(ChartData,ChartOptions,"chart-01","Line")}
+};
+		</script>
+		<script asyn src="https://livegap.com/charts/js/webfont.js">
+		</script><script src="https://livegap.com/charts/js/Chart.min.js"></script>
+		<script>
+function DrawTheChart(ChartData,ChartOptions,ChartId,ChartType){
+eval('var myLine = new Chart(document.getElementById(ChartId).getContext("2d")).'+ChartType+'(ChartData,ChartOptions);document.getElementById(ChartId).getContext("2d").stroke();')
+}
+		</script>
+		    <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="jquery.maphilight.js"></script>
+<script type="text/javascript">
+        $(function () {
+            $('area').click(function (event) {
+                var map = document.getElementById('map');                
+                var areas = map.getElementsByTagName('area');
+                for (var i = 0; i < areas.length; i++) {
+                    var area = areas[i];
+                    var id = area.id;
+                    var data = $('#' + id).data('maphilight') || {};
+                    if (area.id == $(this)[0].id)
+                        data.fillColor = '02FC1F'; // Sample color           
+                    else data.fillColor = 'ff0000'; // Sample color           
+                    $('#' + id).data('maphilight', data).trigger('alwaysOn.maphilight');
+                }
+            });
+            $('.map').maphilight({ strokeColor: '808080', strokeWidth: 0, fill: 'ff0000', fillColor: 'ff0000', alwaysOn: true });
+        });
+    </script>
+		
+</head>
+
+<body>
+  <header class="header-global">
+    <nav id="navbar-main" class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light headroom">
+      <div class="container">
+        <a class="navbar-brand mr-lg-5" href="./index.html">
+          <img alt="image" src="./assets/img/brand/white.png">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse" id="navbar_global">
+          <div class="navbar-collapse-header">
+            <div class="row">
+              <div class="col-6 collapse-brand">
+                <a href="./index.html">
+                  <img alt="image" src="./assets/img/brand/blue.png">
+                </a>
+              </div>
+              <div class="col-6 collapse-close">
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
+                  <span></span>
+                  <span></span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link" data-toggle="dropdown" role="button">
+                <i class="ni ni-ui-04 d-lg-none"></i>
+                <span class="nav-link-inner--text">MainContent</span>
+              </a>
+              <div class="dropdown-menu dropdown-menu-xl">
+                <div class="dropdown-menu-inner">
+                  <a href="#" class="media d-flex align-items-center">
+                    <div class="icon icon-shape bg-gradient-primary rounded-circle text-white">
+                      <i class="ni ni-spaceship"></i>
+                    </div>
+                    <div class="media-body ml-3">
+                      <h6 class="heading text-primary mb-md-1">선거지역 추천</h6>
+                      <p class="description d-none d-md-inline-block mb-0">당신의 선거를 도와드립니다.</p>
+                    </div>
+                  </a>
+                  <a href="#" class="media d-flex align-items-center">
+                    <div class="icon icon-shape bg-gradient-success rounded-circle text-white">
+                      <i class="ni ni-palette"></i>
+                    </div>
+                    <div class="media-body ml-3">
+                      <h6 class="heading text-primary mb-md-1">음성 비교</h6>
+                      <p class="description d-none d-md-inline-block mb-0">문재인 대통령과 자신의 목소리를 비교하여 얼마나 음성이 일치하는지 보여줍니다.</p>
+                    </div>
+                  </a>
+                  <a href="#" class="media d-flex align-items-center">
+                    <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
+                      <i class="ni ni-ui-04"></i>
+                    </div>
+                    <div class="media-body ml-3">
+                      <h5 class="heading text-warning mb-md-1">선거 지역 키워드 추천</h5>
+                      <p class="description d-none d-md-inline-block mb-0">해당 지역의 선거에 사용될 키워드를 제공해드립니다.</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a href="./examples/login.html">
+                <i class="ni ni-collection d-lg-none"> 가입하기</i>
+                <span class="nav-link-inner--text"></span>
+              </a>
+              <div class="dropdown-menu">
+                <a href="./examples/landing.html" class="dropdown-item">Landing</a>
+                <a href="./examples/profile.html" class="dropdown-item">Profile</a>
+                <a href="./examples/login.html" class="dropdown-item">로그인</a>
+                <a href="./examples/register.html" class="dropdown-item">가입하기</a>
+              </div>
+            </li>
+          </ul>
+ 
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main>
+<!-- 1번쨰 단  -->
+    <div class="position-relative">
+      <!-- Hero for FREE version -->
+      <section class="section section-lg section-hero section-shaped">
+        <!-- Background circles -->
+        <div class="shape shape-style-1 shape-primary">
+        </div>
+ 		<div>
+		<img class="map" id="Image-Maps-Com-image-maps-2019-08-15-082917" src="./assets/img/theme/nowongu2.png" border="0" width="483" height="499" orgWidth="483" orgHeight="499" usemap="#image-maps-2019-08-15-082917" alt=""/>
+		<map  name="image-maps-2019-08-15-082917" id="ImageMapsCom-image-maps-2019-08-15-082917">
+		<area shape="rect" coords="481,497,483,499" alt="Image Map" style="outline:none;" title="Image Map" href="http://www.image-maps.com/index.php?aff=mapped_users_0" />
+		<area  alt="상계4동" title="" href="#" shape="poly" coords="292,47,274,62,260,58,243,74,226,80,225,99,212,115,210,130,219,142,219,158,215,167,214,175,217,181,240,164,250,157,265,158,276,167,287,170,304,187,314,188,327,187,343,193,343,184,351,179,350,170,361,155,332,121,333,111,341,97,342,90,353,90,361,82,362,74,358,65,336,63,312,57" style="outline:none; co" target="_self"  id="no1"   data-maphilight='{"strokeColor":"0000ff","strokeWidth":5,"fillColor":"ff0000","fillOpacity":0.6}' />
+		<area  alt="상계1동" title="" href="#" shape="poly" coords="288,45,268,59,261,55,250,61,240,73,229,74,223,79,221,97,208,114,211,123,207,128,197,126,188,138,168,137,157,144,145,142,134,146,114,140,112,155,106,155,102,152,96,156,81,149,56,146,55,139,60,132,56,126,73,91,79,86,79,69,76,59,76,50,85,41,129,32,146,13,159,6,180,18,200,20,212,15,257,8,272,12,285,28" style="outline:none;" target="_self"    id="no2" />
+		<area  alt="상계3동" title="" href="#" shape="poly" coords="344,193,344,207,313,201,287,209,279,205,254,208,225,201,215,209,211,203,213,196,203,195,197,189,195,181,189,174,172,166,167,154,164,143,188,139,202,130,215,140,217,154,211,170,216,183,235,173,255,160,278,172,305,192,322,189" style="outline:none;" target="_self"    id="no3" />
+		<area  alt="상계4동" title="" href="#" shape="poly" coords="343,209,310,204,294,211,284,212,278,208,259,211,226,204,218,211,213,211,199,228,197,241,209,242,215,249,227,249,230,256,245,260,252,257,283,264,307,263,326,267,338,266,325,245,326,229" style="outline:none;" target="_self"    id="no4" />
+		<area  alt="상계5동" title="" href="#" shape="poly" coords="170,171,163,179,163,198,156,201,156,219,182,207,197,215,197,227,212,210,209,205,208,198,192,194,190,180" style="outline:none;" target="_self"    id="no5" />
+		<area  alt="상계9동" title="" href="#" shape="poly" coords="115,154,116,144,133,148,143,145,153,150,161,145,164,156,170,167,161,177,162,194,153,201,155,219,146,223,142,210,149,191,127,184,111,189,106,175,107,158" style="outline:none;" target="_self" id="no6"    />
+		<area  alt="상계8동" title="" href="#" shape="poly" coords="54,149,81,152,91,158,105,156,104,183,107,191,112,201,102,204,90,201,82,194,74,198,70,185,61,178" style="outline:none;" target="_self"   id="no7"  />
+		<area  alt="상계10동" title="" href="#" shape="poly" coords="115,190,144,192,140,212,141,221,128,216,125,222,127,232,119,238,100,241,83,240,76,223,69,209,72,201,83,200,97,202,108,210,116,198" style="outline:none;" target="_self"   id="no8"  />
+		<area  alt="공릉2동" title="" href="#" shape="poly" coords="308,333,295,334,284,337,262,338,253,354,238,357,232,372,218,382,200,386,223,400,228,414,236,426,258,450,269,447,284,451,303,450,323,465,341,456,355,457,368,450,395,458,405,454,407,440,412,423,423,422,457,381,461,367,457,355,442,348,438,328,424,316,398,316,387,311,348,312,334,326" style="outline:none;" target="_self"   id="no9"  />
+		<area  alt="중계본동" title="" href="#" shape="poly" coords="339,268,316,270,299,262,282,266,254,259,245,260,238,260,234,256,228,257,222,266,224,282,222,291,231,307,259,314,265,326,276,328,277,338,296,330,320,330,335,322,347,311,332,293,331,282" style="outline:none;" target="_self"   id="no10"  />
+		<area  alt="상계2동" title="" href="#" shape="poly" coords="131,218,131,232,121,237,130,249,154,243,169,248,174,267,191,240,197,235,193,225,192,218,181,210,170,219,157,222,146,228" style="outline:none;" target="_self"    id="no11" />
+		<area  alt="중계1동" title="" href="#" shape="poly" coords="226,254,220,266,222,281,219,290,208,295,194,297,189,302,185,286,181,276,175,269,187,259,194,250,194,242,208,243" style="outline:none;" target="_self"     id="no12"/>
+		<area  alt="상계7동" title="" href="#" shape="poly" coords="172,266,167,251,151,247,142,252,130,252,139,283,152,280" style="outline:none;" target="_self"    id="no13" />
+		<area  alt="상계6동" title="" href="#" shape="poly" coords="83,244,91,238,100,244,114,239,128,248,139,290,124,308,115,334,102,330,92,313" style="outline:none;" target="_self"   id="no14"  />
+		<area  alt="중계3동" title="" href="#" shape="poly" coords="173,269,140,286,165,335,174,329,182,327,181,313,189,308,186,289" style="outline:none;" target="_self"    id="no15" />
+		<area  alt="중계2동" title="" href="#" shape="poly" coords="139,292,118,318,115,334,123,343,134,338,142,339,151,335,162,334" style="outline:none;" target="_self"    id="no16" />
+		<area  alt="하계1동" title="" href="#" shape="poly" coords="220,292,202,298,190,305,184,316,184,326,181,330,176,330,170,336,163,338,160,338,169,357,185,380,200,382,212,380,228,374,237,357,252,350,260,336,276,337,274,332,261,330,256,316,239,314,228,309" style="outline:none;" target="_self"   id="no17"  />
+		<area  alt="하계2동" title="" href="#" shape="poly" coords="157,334,125,342,163,397,184,383" style="outline:none;" target="_self"   id="no18"  />
+		<area  alt="공릉3동" title="" href="#" shape="poly" coords="187,384,167,398,186,429,233,425,222,411,216,398,199,385" style="outline:none;" target="_self" id="no19"    />
+		<area  alt="공릉1동" title="" href="#" shape="poly" coords="188,430,195,461,209,460,218,463,228,454,254,452,240,440,235,427" style="outline:none;" target="_self" id="no20"    />
+		<area  alt="월계2동" title="" href="#" shape="poly" coords="56,302,33,318,34,334,22,339,19,355,11,362,24,386,40,392,50,396,64,419,69,428,102,384,94,379,84,386,72,364,64,360,66,319" style="outline:none;" target="_self"   id="no21"  />
+		<area  alt="월계4동" title="" href="#" shape="poly" coords="59,302,67,313,69,319,69,358,80,373,83,386,94,377,104,380,102,391,70,426,77,426,82,437,90,444,100,448,108,429,133,426,116,402,120,387,129,382,139,384,150,380,131,353,116,339,108,339,94,315,87,319,70,300,70,292,63,290" style="outline:none;" target="_self"   id="no22"  />
+		<area  alt="월계1동" title="" href="#" shape="poly" coords="109,432,100,450,128,472,154,469,158,454,145,451,143,438,136,427" style="outline:none;" target="_self"   id="no23"  />
+		<area  alt="월계3동" title="" href="#" shape="poly" coords="148,382,122,387,119,400,137,424,146,436,145,446,153,452,161,455,157,469,172,467,193,479,196,469,194,453,185,432,179,418,168,400,161,402,159,396" style="outline:none;" target="_self"    id="no24" />
+		</map>
+		</div>
+      
+
+  
+        </section>
+    </div>
+
+    <!--  2번째 단  -->
+        <div class="position-relative">
+      <!-- Hero for FREE version -->
+      <section class="section section-lg section-hero section-shaped">
+        <!-- Background circles -->
+        <div class="shape shape-style-1 shape-light">
+        </div>
+        
+        <div style=" margin-left: 300px; display: inline-block;"> <!-- style="width: 800px; height: 500px; float: left; background-color: rgba( 00, 00, 00, 0.4); margin-left: 30px;" -->
+        	
+        	<canvas  id="chart-01" width="692" height="392"  style="background-color:rgba(31,31,31,1);border:4px rgba(140,145,6,1) solid;border-radius:0px;width:692px;height:392px;padding-left:0px;padding-right:0px;padding-top:0px;padding-bottom:0px"></canvas>    
+        	      
+        </div>
+
+        </section>
+    </div>
+    
+<!-- 3번쨰 단  -->
+
+        <div class="position-relative">
+      <!-- Hero for FREE version -->
+      <section class="section section-lg section-hero section-shaped">
+        <!-- Background circles -->
+        <div class="shape shape-style-1 shape-default">
+        </div>
+        
+        <div style=" margin-left: 300px;display: inline-block;"> <!-- style="width: 800px; height: 500px; float: left; background-color: rgba( 00, 00, 00, 0.4); margin-left: 30px;" -->
+        	
+        	<img src="./assets/img/theme/title001.jpg" style="width: 600px; height: 550px;">    
+        	      
+        </div>
+
+        </section>
+    </div>
+
+             </div>
+        </main>
+          <!-- Core -->
+
+  <script src="./assets/vendor/jquery/jquery.min.js"></script>
+    <script src="./assets/vendor/popper/popper.min.js"></script>
+  <script src="./assets/vendor/bootstrap/bootstrap.min.js"></script>
+  <script src="./assets/vendor/headroom/headroom.min.js"></script>
+  <script src="./assets/js/jquery.maphilight.min.js"></script>
+  <!-- Optional JS -->
+  <script src="./assets/vendor/onscreen/onscreen.min.js"></script>
+  <script src="./assets/vendor/nouislider/js/nouislider.min.js"></script>
+  <script src="./assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+  
+  <!-- Argon JS -->
+  <script src="./assets/js/argon.js?v=1.1.0"></script>
+  <!-- custom script -->
+  <script> function MoreChartOptions(){} var ChartData = {labels : ["January",
+"February","March","April","May","June","July",],datasets : [{fillColor :"rgba(52,152,219,1)",strokeColor : "rgba(52,152,219,0.5)",pointColor : "rgba(255,255,255,1.00)",markerShape :"circle",pointStrokeColor : "rgba(52,152,219,1)",data : [65,8,90,81,56,55,40,],title:"2013"},{fillColor :"rgba(46,204,113,1)",strokeColor : "rgba(46,204,112,0.59)",pointColor : "rgba(255,255,255,1.00)",markerShape :"circle",pointStrokeColor : "rgba(46,204,113,1)",data : [21,48,40,19,96,27,100,],title:"2014"},]};ChartOptions= {decimalSeparator:".",thousandSeparator:",",spaceLeft:12,spaceRight:12,spaceTop:12,spaceBottom:12,scaleLabel:"<%=value+''%>",yAxisMinimumInterval:'none',scaleShowLabels:true,scaleShowLine:true,scaleLineStyle:"solid",scaleLineWidth:2,scaleLineColor:"rgba(140,145,6,0.37)",scaleOverlay :false,scaleOverride :false,scaleSteps:10,scaleStepWidth:10,scaleStartValue:0,inGraphDataShow:true,inGraphDataTmpl:'<%=v3%>',inGraphDataFontFamily:"'Indie Flower'",inGraphDataFontStyle:"normal bold",inGraphDataFontColor:"rgba(219,219,219,1)",inGraphDataFontSize:15,inGraphDataPaddingX:0,inGraphDataPaddingY:5,inGraphDataAlign:"center",inGraphDataVAlign:"bottom",inGraphDataXPosition:2,inGraphDataYPosition:3,inGraphDataAnglePosition:2,inGraphDataRadiusPosition:2,inGraphDataRotate:0,inGraphDataPaddingAngle:0,inGraphDataPaddingRadius:0, inGraphDataBorders:false,inGraphDataBordersXSpace:1,inGraphDataBordersYSpace:1,inGraphDataBordersWidth:1,inGraphDataBordersStyle:"solid",inGraphDataBordersColor:"rgba(0,0,0,1)",legend:true,maxLegendCols:5,legendBlockSize:15,legendFillColor:'rgba(255,255,255,0.00)',legendColorIndicatorStrokeWidth:1,legendPosX:-2,legendPosY:4,legendXPadding:0,legendYPadding:0,legendBorders:false,legendBordersWidth:1,legendBordersStyle:"solid",legendBordersColors:"rgba(102,102,102,1)",legendBordersSpaceBefore:5,legendBordersSpaceLeft:5,legendBordersSpaceRight:5,legendBordersSpaceAfter:5,legendSpaceBeforeText:5,legendSpaceLeftText:5,legendSpaceRightText:5,legendSpaceAfterText:5,legendSpaceBetweenBoxAndText:5,legendSpaceBetweenTextHorizontal:5,legendSpaceBetweenTextVertical:5,legendFontFamily:"'Indie Flower'",legendFontStyle:"normal normal",legendFontColor:"rgba(59,59,59,1)",legendFontSize:21,yAxisFontFamily:"'Indie Flower'",yAxisFontStyle:"normal bold",yAxisFontColor:"rgba(102,102,102,1)",yAxisFontSize:18,yAxisLabel : "Y Axis",yAxisUnitFontFamily:"'Indie Flower'",yAxisUnitFontStyle:"normal bold",yAxisUnitFontColor:"rgba(102,102,102,1)",yAxisUnitFontSize:16,yAxisUnit : "Unit",showYAxisMin:false,rotateLabels:"smart",xAxisBottom:true,yAxisLeft:true,yAxisRight:false,graphTitleSpaceBefore:5,graphTitleSpaceAfter:-2, graphTitleBorders:false,graphTitleBordersXSpace:1,graphTitleBordersYSpace:1,graphTitleBordersWidth:1,graphTitleBordersStyle:"solid",graphTitleBordersColor:"rgba(0,0,0,1)",graphTitle : "Chart Title",graphTitleFontFamily:"'Indie Flower'",graphTitleFontStyle:"normal normal",graphTitleFontColor:"rgba(140,145,6,1)",graphTitleFontSize:32,scaleFontFamily:"'Indie Flower'",scaleFontStyle:"normal normal",scaleFontColor:"rgba(140,145,6,1)",scaleFontSize:16,pointLabelFontFamily:"'Open Sans'",pointLabelFontStyle:"normal normal",pointLabelFontColor:"rgba(102,102,102,1)",pointLabelFontSize:12,angleShowLineOut:true,angleLineStyle:"solid",angleLineWidth:1,angleLineColor:"rgba(0,0,0,0.1)",percentageInnerCutout:50,scaleShowGridLines:true,scaleGridLineStyle:"solid",scaleGridLineWidth:1,scaleGridLineColor:"rgba(140,145,6,0.13)",scaleXGridLinesStep:1,scaleYGridLinesStep:0,segmentShowStroke:true,segmentStrokeStyle:"solid",segmentStrokeWidth:2,segmentStrokeColor:"rgba(255,255,255,1.00)",datasetStroke:true,datasetFill : false,datasetStrokeStyle:"solid",datasetStrokeWidth:2,bezierCurve:false,bezierCurveTension :0.4,pointDotStrokeStyle:"dotted",pointDotStrokeWidth : 1,pointDotRadius : 5,pointDot : true,scaleTickSizeBottom:5,scaleTickSizeTop:5,scaleTickSizeLeft:5,scaleTickSizeRight:5,barShowStroke : false,barBorderRadius:0,barStrokeStyle:"solid",barStrokeWidth:1,barValueSpacing:15,barDatasetSpacing:0,scaleShowLabelBackdrop :true,scaleBackdropColor:'rgba(255,255,255,0.75)',scaleBackdropPaddingX :2,scaleBackdropPaddingY :2,animationEasing:'easeInSine',animateRotate:true,animateScale:false,animationByDataset:true,animationLeftToRight:true,animationSteps:100,animation : true,onAnimationComplete : function(){MoreChartOptions()}};
+ DrawTheChart(ChartData,ChartOptions,"chart-01","Line");</script>
+ <!--  custom script map !-->
+
+
+
+</body>
+</html>

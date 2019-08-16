@@ -1,0 +1,172 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Map</title>
+  <!-- Favicon -->
+  <link href="./assets/img/brand/favicon.png" rel="icon" type="image/png">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+  <!-- Icons -->
+  <link href="./assets/vendor/nucleo/css/nucleo.css" rel="stylesheet">
+  <link href="./assets/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <!-- Argon CSS -->
+  <link type="text/css" href="./assets/css/argon.css?v=1.1.0" rel="stylesheet">
+  <!--  Custom css -->
+		<link  id='GoogleFontsLink' href='https://fonts.googleapis.com/css?family=Indie Flower' rel='stylesheet' type='text/css'><link  id='GoogleFontsLink' href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet' type='text/css'>
+		<script>
+ WebFontConfig = {
+ google: 
+{families: ["Indie Flower","Open Sans",]},active: function() { 
+ DrawTheChart(ChartData,ChartOptions,"chart-01","Line")}
+};
+		</script>
+		<script asyn src="https://livegap.com/charts/js/webfont.js">
+		</script><script src="https://livegap.com/charts/js/Chart.min.js"></script>
+		<script>
+function DrawTheChart(ChartData,ChartOptions,ChartId,ChartType){
+eval('var myLine = new Chart(document.getElementById(ChartId).getContext("2d")).'+ChartType+'(ChartData,ChartOptions);document.getElementById(ChartId).getContext("2d").stroke();')
+}
+		</script>
+
+
+</head>
+
+<body>
+  <header class="header-global">
+    <nav id="navbar-main" class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light headroom">
+      <div class="container">
+        <a class="navbar-brand mr-lg-5" href="./index.html">
+          <img alt="image" src="./assets/img/brand/white.png">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse" id="navbar_global">
+          <div class="navbar-collapse-header">
+            <div class="row">
+              <div class="col-6 collapse-brand">
+                <a href="./index.html">
+                  <img alt="image" src="./assets/img/brand/blue.png">
+                </a>
+              </div>
+              <div class="col-6 collapse-close">
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
+                  <span></span>
+                  <span></span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link" data-toggle="dropdown" role="button">
+                <i class="ni ni-ui-04 d-lg-none"></i>
+                <span class="nav-link-inner--text">MainContent</span>
+              </a>
+              <div class="dropdown-menu dropdown-menu-xl">
+                <div class="dropdown-menu-inner">
+                  <a href="#" class="media d-flex align-items-center">
+                    <div class="icon icon-shape bg-gradient-primary rounded-circle text-white">
+                      <i class="ni ni-spaceship"></i>
+                    </div>
+                    <div class="media-body ml-3">
+                      <h6 class="heading text-primary mb-md-1">선거지역 추천</h6>
+                      <p class="description d-none d-md-inline-block mb-0">당신의 선거를 도와드립니다.</p>
+                    </div>
+                  </a>
+                  <a href="#" class="media d-flex align-items-center">
+                    <div class="icon icon-shape bg-gradient-success rounded-circle text-white">
+                      <i class="ni ni-palette"></i>
+                    </div>
+                    <div class="media-body ml-3">
+                      <h6 class="heading text-primary mb-md-1">음성 비교</h6>
+                      <p class="description d-none d-md-inline-block mb-0">문재인 대통령과 자신의 목소리를 비교하여 얼마나 음성이 일치하는지 보여줍니다.</p>
+                    </div>
+                  </a>
+                  <a href="#" class="media d-flex align-items-center">
+                    <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
+                      <i class="ni ni-ui-04"></i>
+                    </div>
+                    <div class="media-body ml-3">
+                      <h5 class="heading text-warning mb-md-1">선거 지역 키워드 추천</h5>
+                      <p class="description d-none d-md-inline-block mb-0">해당 지역의 선거에 사용될 키워드를 제공해드립니다.</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a href="./examples/login.html">
+                <i class="ni ni-collection d-lg-none"> 가입하기</i>
+                <span class="nav-link-inner--text"></span>
+              </a>
+              <div class="dropdown-menu">
+                <a href="./examples/landing.html" class="dropdown-item">Landing</a>
+                <a href="./examples/profile.html" class="dropdown-item">Profile</a>
+                <a href="./examples/login.html" class="dropdown-item">로그인</a>
+                <a href="./examples/register.html" class="dropdown-item">가입하기</a>
+              </div>
+            </li>
+          </ul>
+ 
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main>
+<!-- 1번쨰 단  -->
+    <div class="position-relative">
+      <!-- Hero for FREE version -->
+      <section class="section section-lg section-hero section-shaped">
+        <!-- Background circles -->
+        <div class="shape shape-style-1 shape-primary">
+        </div>
+
+
+
+        <h1 style="text-align: center;">이곳은 선택구역의 연령 분포 및 성별 분포 표입니다</h1>
+        <div style=" margin-left: 300px; display: inline-block;"> <!-- style="width: 800px; height: 500px; float: left; background-color: rgba( 00, 00, 00, 0.4); margin-left: 30px;" -->
+        	
+        	<canvas  id="chart-01" width="692" height="392"  style="background-color:rgba(31,31,31,1);border:4px rgba(140,145,6,1) solid;border-radius:0px;width:692px;height:392px;padding-left:0px;padding-right:0px;padding-top:0px;padding-bottom:0px"></canvas>    
+        	      
+        </div>
+      
+
+  
+        </section>
+        				 <div style="float: left;">
+			<a href="http://localhost:8084/TeamProject3/Content2_Gw.html"><img src="./assets/img/theme/back.png" style="width: 300px; height: 300px;"></a>
+		</div>
+		<div style="float: right;">
+			<a href="http://localhost:8084/TeamProject3/Content4_Gw.html"><img src="./assets/img/theme/next.png" style="width: 300px; height: 300px;"></a>
+		</div>	
+    </div>
+
+        </main>
+          <!-- Core -->
+
+  <script src="./assets/vendor/jquery/jquery.min.js"></script>
+    <script src="./assets/vendor/popper/popper.min.js"></script>
+  <script src="./assets/vendor/bootstrap/bootstrap.min.js"></script>
+  <script src="./assets/vendor/headroom/headroom.min.js"></script>
+  <script src="./assets/js/jquery.maphilight.min.js"></script>
+  <!-- Optional JS -->
+  <script src="./assets/vendor/onscreen/onscreen.min.js"></script>
+  <script src="./assets/vendor/nouislider/js/nouislider.min.js"></script>
+  <script src="./assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+  
+  <!-- Argon JS -->
+  <script src="./assets/js/argon.js?v=1.1.0"></script>
+  <!-- custom script -->
+  <script> function MoreChartOptions(){} var ChartData = {labels : ["January",
+"February","March","April","May","June","July",],datasets : [{fillColor :"rgba(52,152,219,1)",strokeColor : "rgba(52,152,219,0.5)",pointColor : "rgba(255,255,255,1.00)",markerShape :"circle",pointStrokeColor : "rgba(52,152,219,1)",data : [65,8,90,81,56,55,40,],title:"2013"},{fillColor :"rgba(46,204,113,1)",strokeColor : "rgba(46,204,112,0.59)",pointColor : "rgba(255,255,255,1.00)",markerShape :"circle",pointStrokeColor : "rgba(46,204,113,1)",data : [21,48,40,19,96,27,100,],title:"2014"},]};ChartOptions= {decimalSeparator:".",thousandSeparator:",",spaceLeft:12,spaceRight:12,spaceTop:12,spaceBottom:12,scaleLabel:"<%=value+''%>",yAxisMinimumInterval:'none',scaleShowLabels:true,scaleShowLine:true,scaleLineStyle:"solid",scaleLineWidth:2,scaleLineColor:"rgba(140,145,6,0.37)",scaleOverlay :false,scaleOverride :false,scaleSteps:10,scaleStepWidth:10,scaleStartValue:0,inGraphDataShow:true,inGraphDataTmpl:'<%=v3%>',inGraphDataFontFamily:"'Indie Flower'",inGraphDataFontStyle:"normal bold",inGraphDataFontColor:"rgba(219,219,219,1)",inGraphDataFontSize:15,inGraphDataPaddingX:0,inGraphDataPaddingY:5,inGraphDataAlign:"center",inGraphDataVAlign:"bottom",inGraphDataXPosition:2,inGraphDataYPosition:3,inGraphDataAnglePosition:2,inGraphDataRadiusPosition:2,inGraphDataRotate:0,inGraphDataPaddingAngle:0,inGraphDataPaddingRadius:0, inGraphDataBorders:false,inGraphDataBordersXSpace:1,inGraphDataBordersYSpace:1,inGraphDataBordersWidth:1,inGraphDataBordersStyle:"solid",inGraphDataBordersColor:"rgba(0,0,0,1)",legend:true,maxLegendCols:5,legendBlockSize:15,legendFillColor:'rgba(255,255,255,0.00)',legendColorIndicatorStrokeWidth:1,legendPosX:-2,legendPosY:4,legendXPadding:0,legendYPadding:0,legendBorders:false,legendBordersWidth:1,legendBordersStyle:"solid",legendBordersColors:"rgba(102,102,102,1)",legendBordersSpaceBefore:5,legendBordersSpaceLeft:5,legendBordersSpaceRight:5,legendBordersSpaceAfter:5,legendSpaceBeforeText:5,legendSpaceLeftText:5,legendSpaceRightText:5,legendSpaceAfterText:5,legendSpaceBetweenBoxAndText:5,legendSpaceBetweenTextHorizontal:5,legendSpaceBetweenTextVertical:5,legendFontFamily:"'Indie Flower'",legendFontStyle:"normal normal",legendFontColor:"rgba(59,59,59,1)",legendFontSize:21,yAxisFontFamily:"'Indie Flower'",yAxisFontStyle:"normal bold",yAxisFontColor:"rgba(102,102,102,1)",yAxisFontSize:18,yAxisLabel : "Y Axis",yAxisUnitFontFamily:"'Indie Flower'",yAxisUnitFontStyle:"normal bold",yAxisUnitFontColor:"rgba(102,102,102,1)",yAxisUnitFontSize:16,yAxisUnit : "Unit",showYAxisMin:false,rotateLabels:"smart",xAxisBottom:true,yAxisLeft:true,yAxisRight:false,graphTitleSpaceBefore:5,graphTitleSpaceAfter:-2, graphTitleBorders:false,graphTitleBordersXSpace:1,graphTitleBordersYSpace:1,graphTitleBordersWidth:1,graphTitleBordersStyle:"solid",graphTitleBordersColor:"rgba(0,0,0,1)",graphTitle : "Chart Title",graphTitleFontFamily:"'Indie Flower'",graphTitleFontStyle:"normal normal",graphTitleFontColor:"rgba(140,145,6,1)",graphTitleFontSize:32,scaleFontFamily:"'Indie Flower'",scaleFontStyle:"normal normal",scaleFontColor:"rgba(140,145,6,1)",scaleFontSize:16,pointLabelFontFamily:"'Open Sans'",pointLabelFontStyle:"normal normal",pointLabelFontColor:"rgba(102,102,102,1)",pointLabelFontSize:12,angleShowLineOut:true,angleLineStyle:"solid",angleLineWidth:1,angleLineColor:"rgba(0,0,0,0.1)",percentageInnerCutout:50,scaleShowGridLines:true,scaleGridLineStyle:"solid",scaleGridLineWidth:1,scaleGridLineColor:"rgba(140,145,6,0.13)",scaleXGridLinesStep:1,scaleYGridLinesStep:0,segmentShowStroke:true,segmentStrokeStyle:"solid",segmentStrokeWidth:2,segmentStrokeColor:"rgba(255,255,255,1.00)",datasetStroke:true,datasetFill : false,datasetStrokeStyle:"solid",datasetStrokeWidth:2,bezierCurve:false,bezierCurveTension :0.4,pointDotStrokeStyle:"dotted",pointDotStrokeWidth : 1,pointDotRadius : 5,pointDot : true,scaleTickSizeBottom:5,scaleTickSizeTop:5,scaleTickSizeLeft:5,scaleTickSizeRight:5,barShowStroke : false,barBorderRadius:0,barStrokeStyle:"solid",barStrokeWidth:1,barValueSpacing:15,barDatasetSpacing:0,scaleShowLabelBackdrop :true,scaleBackdropColor:'rgba(255,255,255,0.75)',scaleBackdropPaddingX :2,scaleBackdropPaddingY :2,animationEasing:'easeInSine',animateRotate:true,animateScale:false,animationByDataset:true,animationLeftToRight:true,animationSteps:100,animation : true,onAnimationComplete : function(){MoreChartOptions()}};
+ DrawTheChart(ChartData,ChartOptions,"chart-01","Line");</script>
+ 
+
+
+
+</body>
+</html>
