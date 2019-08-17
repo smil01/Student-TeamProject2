@@ -10,5 +10,5 @@ import javax.servlet.http.HttpServletResponse;
 import com.google.gson.JsonObject;
 
 public interface JsonService {
-	public Object execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException;
+	public JsonObject execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException;
 }

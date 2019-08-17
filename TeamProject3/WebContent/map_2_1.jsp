@@ -22,15 +22,14 @@ table {
 	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2c31ce0bfdf6ac450e55f852bdb19a2a&libraries=services,clusterer,drawing"></script>
 </head>
 <body>
-	<table border="1">
+	<table>
 		<caption>
-			<h2>토요일 00시부터 04시 20대 남/여성 예측 결과</h2>
+			<h2>예측 결과</h2>
 		</caption>
 		<tr>
-			<td align="center" width="50%">
+			<td align="center" width="100%">
 				<div id="map" style="width: 100%; height: 100%;"></div>
 			</td>
-			<td align="center" width="50%"><img src=""></td>
 		</tr>
 	</table>
 

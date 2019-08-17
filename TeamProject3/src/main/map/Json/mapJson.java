@@ -18,12 +18,22 @@ import main.map.DTO.setMapDTO;
 
 public class mapJson implements JsonService {
 	@Override
-	public Object execute(HttpServletRequest request, HttpServletResponse response)
+	public JsonObject execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String day = request.getParameter("day"), start_time = request.getParameter("start_time"),
 				end_time = request.getParameter("end_time"), sex_count = request.getParameter("sex_count"),
 				sex_choice = request.getParameter("sex_choice"), start_age = request.getParameter("start_age"),
-				end_age = request.getParameter("end_age"), max = request.getParameter("max");
+				end_age = request.getParameter("end_age"), max = request.getParameter("max"),
+				dong = request.getParameter("dong");
+		
+		String[] temp_dong = dong.replaceAll("\\p{Z}", "").split(",");
+		String sql_dong = "";
+		for(int i = 0; i < temp_dong.length; i++) {
+			sql_dong+= "DONG = " + "\'" + temp_dong[i] + "\'";
+			if(temp_dong.length - 1 != i) {
+				sql_dong+= " or ";
+			}
+		}
 
 		String table = day;
 		ArrayList<setMapDTO> chart_list = new ArrayList<setMapDTO>();
@@ -55,7 +65,7 @@ public class mapJson implements JsonService {
 		desc = desc.substring(0, desc.length()-1);
 		
 		for(String tab : col_list) {
-			ArrayList<mapDTO> temp = mapDAO.getDao().select(tab, table, max, desc);
+			ArrayList<mapDTO> temp = mapDAO.getDao().select(tab, table, max, desc, sql_dong);
 
 			chart_list.add(new setMapDTO(tab, temp));
 			if(result.size() == 0) {
@@ -68,6 +78,7 @@ public class mapJson implements JsonService {
 		}
 
 		request.getSession().setAttribute("chart", chart_list);
+		System.out.println(request.getSession().getAttribute("chart"));
 
 		JsonArray json_list = new JsonArray();
 		for (mapDTO dto : result) {
@@ -82,7 +93,7 @@ public class mapJson implements JsonService {
 
 		JsonObject json_result = new JsonObject();
 		json_result.add("positions", json_list);
-
+		
 		return json_result;
 	}
 }

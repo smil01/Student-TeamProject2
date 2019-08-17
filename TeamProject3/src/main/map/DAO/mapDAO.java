@@ -60,21 +60,22 @@ public class mapDAO {
 		}
 	}
 
-	public ArrayList<mapDTO> select(String column, String table, String max, String desc) {
+	public ArrayList<mapDTO> select(String column, String table, String max, String desc, String dong) {
 		ArrayList<mapDTO> list = new ArrayList<mapDTO>();
 		try {
 			getCon();
 
-			String sql = "SELECT * FROM (SELECT X, Y, " + column + " FROM " + table + " ORDER BY " + desc + " DESC) WHERE ROWNUM <= " + max;
+			String sql = "SELECT * FROM (SELECT X, Y, " + column + " FROM " + table + " WHERE " + dong + " ORDER BY "
+					+ desc + " DESC) WHERE ROWNUM <= " + max;
 
 			System.out.println("========================= SQL 커멘드 확인 :" + sql);
-			
+
 			pst = conn.prepareStatement(sql);
 
 			rs = pst.executeQuery();
 
 			while (rs.next()) {
-				list.add(new mapDTO(rs.getDouble(1), rs.getDouble(2), rs.getInt(3)));
+				list.add(new mapDTO(rs.getString(1), rs.getString(2), rs.getString(3), rs.getInt(3)));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
