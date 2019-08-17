@@ -19,76 +19,7 @@
   <link type="text/css" href="assets/css/argon.css?v=1.1.0" rel="stylesheet">
 </head>
 
-<body>  <header class="header-global">
-    <nav id="navbar-main" class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light headroom">
-      <div class="container">
-        <a class="navbar-brand mr-lg-5" href="./index.html">
-          <img alt="image" src="./assets/img/brand/white.png">
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="navbar-collapse collapse" id="navbar_global">
-          <div class="navbar-collapse-header">
-            <div class="row">
-              <div class="col-6 collapse-brand">
-                <a href="./index.html">
-                  <img alt="image" src="./assets/img/brand/blue.png">
-                </a>
-              </div>
-              <div class="col-6 collapse-close">
-                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
-                  <span></span>
-                  <span></span>
-                </button>
-              </div>
-            </div>
-          </div>
-          <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
-            <li class="nav-item dropdown">
-              <a href="#" class="nav-link" data-toggle="dropdown" role="button">
-                <i class="ni ni-ui-04 d-lg-none"></i>
-                <span class="nav-link-inner--text">MainContent</span>
-              </a>
-              <div class="dropdown-menu dropdown-menu-xl">
-                <div class="dropdown-menu-inner">
-                  <a href="#" class="media d-flex align-items-center">
-                    <div class="icon icon-shape bg-gradient-primary rounded-circle text-white">
-                      <i class="ni ni-spaceship"></i>
-                    </div>
-                    <div class="media-body ml-3">
-                      <h6 class="heading text-primary mb-md-1">선거지역 추천</h6>
-                      <p class="description d-none d-md-inline-block mb-0">당신의 선거를 도와드립니다.</p>
-                    </div>
-                  </a>
-                  <a href="#" class="media d-flex align-items-center">
-                    <div class="icon icon-shape bg-gradient-success rounded-circle text-white">
-                      <i class="ni ni-palette"></i>
-                    </div>
-                    <div class="media-body ml-3">
-                      <h6 class="heading text-primary mb-md-1">음성 비교</h6>
-                      <p class="description d-none d-md-inline-block mb-0">문재인 대통령과 자신의 목소리를 비교하여 얼마나 음성이 일치하는지 보여줍니다.</p>
-                    </div>
-                  </a>
-                  <a href="#" class="media d-flex align-items-center">
-                    <div class="icon icon-shape bg-gradient-warning rounded-circle text-white">
-                      <i class="ni ni-ui-04"></i>
-                    </div>
-                    <div class="media-body ml-3">
-                      <h5 class="heading text-warning mb-md-1">선거 지역 키워드 추천</h5>
-                      <p class="description d-none d-md-inline-block mb-0">해당 지역의 선거에 사용될 키워드를 제공해드립니다.</p>
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </li>
-
-          </ul>
- 
-        </div>
-      </div>
-    </nav>
-  </header>
+<body> 
   <main>
     <section class="section section-shaped section-lg">
       <div class="shape shape-style-1 bg-gradient-default">
