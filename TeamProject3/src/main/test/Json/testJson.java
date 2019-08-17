@@ -14,7 +14,7 @@ import main.Json.JsonService;
 public class testJson implements JsonService{
 
 	@Override
-	public Object execute(HttpServletRequest request, HttpServletResponse response)
+	public JsonObject execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		JsonObject test = new JsonObject(), test2 = new JsonObject(), result = new JsonObject();
 		JsonArray list = new JsonArray();

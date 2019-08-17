@@ -4,6 +4,7 @@ import java.util.HashMap;
 
 import main.error.service.ErrorService;
 import main.main.service.MainService;
+import main.main.service.StartService;
 import main.member.service.LoginOPService;
 import main.member.service.LoginService;
 import main.member.service.RegisterOPService;
@@ -19,9 +20,10 @@ public class CommandMapper {
 		
 		map.put("test.do", new TestService());
 		map.put("error.do", new ErrorService());
+		map.put("start.do", new StartService());
 		map.put("main.do", new MainService());
 		map.put("login.do", new LoginService());
-		map.put("loginOp.do", new LoginOPService());
+		map.put("search.do", new LoginOPService());
 		map.put("register.do", new RegisterService());
 		map.put("registerOp.do", new RegisterOPService());
 		

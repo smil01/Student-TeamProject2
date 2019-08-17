@@ -21,15 +21,15 @@ public class LoginOPService implements CommandService{
 		memberDTO result = memberDAO.getDao().select(new memberDTO(id, pw));
 
 		if(result != null) {
-			request.getSession().setAttribute("member", result);
+			return "Input_Gw.html";
 		}
 		
-		return "main.do";
+		return "login.do";
 	}
 
 	@Override
 	public boolean getType() {
-		return true;
+		return false;
 	}
 
 }

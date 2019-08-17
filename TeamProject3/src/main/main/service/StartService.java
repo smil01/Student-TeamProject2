@@ -8,11 +8,12 @@ import javax.servlet.http.HttpServletResponse;
 
 import main.front.CommandService;
 
-public class MainService implements CommandService{
+public class StartService implements CommandService{
+
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		return "Main_Gw.html";
+		return "Main_Start_Gw.jsp";
 	}
 
 	@Override

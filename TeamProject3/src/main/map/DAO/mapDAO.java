@@ -65,7 +65,7 @@ public class mapDAO {
 		try {
 			getCon();
 
-			String sql = "SELECT * FROM (SELECT X, Y, " + column + " FROM " + table + " WHERE " + dong + " ORDER BY "
+			String sql = "SELECT * FROM (SELECT X, Y, DONG, " + column + " FROM " + table + " WHERE " + dong + " ORDER BY "
 					+ desc + " DESC) WHERE ROWNUM <= " + max;
 
 			System.out.println("========================= SQL 커멘드 확인 :" + sql);
@@ -75,7 +75,7 @@ public class mapDAO {
 			rs = pst.executeQuery();
 
 			while (rs.next()) {
-				list.add(new mapDTO(rs.getString(1), rs.getString(2), rs.getString(3), rs.getInt(3)));
+				list.add(new mapDTO(rs.getString(1), rs.getString(2), rs.getString(3), rs.getInt(4)));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

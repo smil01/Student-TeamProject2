@@ -17,7 +17,7 @@ public class RegisterOPService implements CommandService {
 		memberDTO input = new memberDTO(request.getParameter("name"), request.getParameter("id"),
 				request.getParameter("pw"));
 
-		return memberDAO.getDao().insert(input) ? "main.do" : "main.do"; // 회원가입 성공 : 회원가입 실패
+		return memberDAO.getDao().insert(input) ? "login.do" : "register.do"; // 회원가입 성공 : 회원가입 실패
 	}
 
 	@Override

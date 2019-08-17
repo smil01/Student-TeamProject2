@@ -44,7 +44,7 @@
                 <div class="text-center text-muted mb-4">
                   <small></small>
                 </div>
-                <form action="loginOp.do" method="post">
+                <form action="search.do" method="post">
                   <div class="form-group mb-3">
                     <div class="input-group input-group-alternative">
                       <div class="input-group-prepend">
@@ -80,7 +80,7 @@
                 <a href="#" class="text-light"><small>Forgot password?</small></a>
               </div>
               <div class="col-6 text-right">
-                <a href="register.jsp" class="text-light"><small>새로 가입하기</small></a>
+                <a href="register.do" class="text-light"><small>새로 가입하기</small></a>
                 
 <br>
 <br>
