@@ -11,6 +11,7 @@ import main.member.DAO.memberDAO;
 import main.member.DTO.memberDTO;
 
 public class LoginOPService implements CommandService{
+	boolean go = false;
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
@@ -21,15 +22,18 @@ public class LoginOPService implements CommandService{
 		memberDTO result = memberDAO.getDao().select(new memberDTO(id, pw));
 
 		if(result != null) {
+			request.getSession().setAttribute("login", result);
+			go = false;
 			return "Input_Gw.html";
 		}
 		
+		go = true;
 		return "login.do";
 	}
 
 	@Override
 	public boolean getType() {
-		return false;
+		return go;
 	}
 
 }

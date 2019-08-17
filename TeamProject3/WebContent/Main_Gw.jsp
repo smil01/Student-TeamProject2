@@ -1,3 +1,4 @@
+<%@page import="main.member.DTO.memberDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -33,6 +34,9 @@ $(function(){
 	});
 });
 </script>
+<%
+	memberDTO login = (memberDTO)request.getSession().getAttribute("login");
+%>
 </head>
 <body>
 
@@ -50,7 +54,11 @@ $(function(){
 		<ul>
 			<li><a href="Main_Gw.html">TOP</a></li>
 			<li><a href="about.html">ABOUT</a></li>
+			<%if(login==null){ %>
 			<li><a href="login.do">로그인</a></li>
+			<%} else {%>
+			<li><a href="search.do?id=<%=login.getId()%>&pw=<%=login.getPw()%>">분석보러가기</a></li>
+			<%}%>
 		</ul>
 	</nav>
 </div>
@@ -108,9 +116,17 @@ $(function(){
 		<h2>더이상 귀찮은 조사와 데이터 관리를 하지 않아도 됩니다</h2>
 		<p>언제든지 사이트에 접속하세요! 버튼 하나만 누르면 됩니다.</p>
 		<!-- 로그인이 안되어있다면 로그인으로, 아니면 바로 컨텐츠 사이트로 -->
-		<a href="login.do">우리 지역 선거 키워드 확인하러가기!
-		<span class="fa fa-chevron-right"></span>
-		</a>
+		<%if(login==null){ %>
+			<a href="login.do">우리 지역 선거 키워드 확인하러가기!
+			<span class="fa fa-chevron-right"></span>
+			</a>
+		<%} else {%>
+			<a href="search.do?id=<%=login.getId()%>&pw=<%=login.getPw()%>">우리 지역 선거 키워드 확인하러가기!
+			<span class="fa fa-chevron-right"></span>
+			</a>
+		<%}%>
+		
+
 	</div>
 </div>
 </section>
