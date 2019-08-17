@@ -22,6 +22,7 @@ table {
 	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2c31ce0bfdf6ac450e55f852bdb19a2a&libraries=services,clusterer,drawing"></script>
 </head>
 <body>
+
 	<table>
 		<caption>
 			<h2>예측 결과</h2>
