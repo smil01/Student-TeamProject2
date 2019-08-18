@@ -88,7 +88,7 @@
 			<div id="bl-main" class="bl-main">
 				<section>
 					<div class="bl-box">
-						<h2 class="bl-icon bl-icon-about">1.선거 지역 확인하기</h2>
+						<h2 class="bl-icon bl-icon-about">1.선거유세 지역 추천</h2>
 					</div>
 					<!-- 선거지역 확인하기 내용 시작-->
 					<div class="bl-content">
@@ -98,7 +98,7 @@
 									<h2>예측 결과가 출력되었습니다.</h2>
 								</caption>
 								<tr>
-									<td align="center" width="100%">
+									<td align="center" width="800px">
 										<div id="map" style="width: 100%; height: 100%;"></div>
 									</td>
 								</tr>
@@ -116,7 +116,7 @@
 				</section>
 				<section id="bl-work-section">
 					<div class="bl-box">
-						<h2 class="bl-icon bl-icon-works">2.지역 분석 상세확인</h2>
+						<h2 class="bl-icon bl-icon-works">2.지역 상세 분석</h2>
 					</div>
 					<!-- 지역 분석 상세확인 내용 시작-->
 					<div class="bl-content">
@@ -158,7 +158,7 @@
 				</section>
 				<section>
 					<div class="bl-box">
-						<h2 class="bl-icon bl-icon-blog">3.워드 클라우드 분석 확인</h2>
+						<h2 class="bl-icon bl-icon-blog">3.지역 맞춤형 키워드 추천</h2>
 					</div>
 					<!-- 워드 클라우드 분석 확인 내용 시작-->
 					<div class="bl-content">
@@ -216,7 +216,7 @@
 				</section>
 				<section>
 					<div class="bl-box">
-						<h2 class="bl-icon bl-icon-contact">4.음성 비교분석하기(미완성)</h2>
+						<h2 class="bl-icon bl-icon-contact">4.선거유세 음성톤 분석</h2>
 					</div>
 					<!-- 4.음성 비교분석하기(미완성) 내용 시작-->
 					<div class="bl-content">

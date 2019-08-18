@@ -80,7 +80,7 @@ A:hover { text-decoration:none; color:#646464;}
 
 
 <div style="text-align: center; margin:auto;">
-<a href="Main_Gw.jsp"><h1 class="logo">╨╦аб╟Э╣И</h1></a>
+<a href="main.do"><h1 class="logo">╨╦аб╟Э╣И</h1></a>
 
 </div>
 
