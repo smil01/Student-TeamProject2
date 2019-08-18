@@ -81,6 +81,7 @@
 		
 		</script>
 		<!--  chart code end -->
+		<link rel="stylesheet" type="text/css" href="scroll.css" />
 	</head>
 	<body>
 	<div class="se-pre-con" style="width: 100%; height: 100%"></div>
@@ -91,17 +92,14 @@
 						<h2 class="bl-icon bl-icon-about">1.선거유세 지역 추천</h2>
 					</div>
 					<!-- 선거지역 확인하기 내용 시작-->
-					<div class="bl-content" style="scrollbar-face-color: #FFFFFF; scrollbar-shadow-color: #A0A0A0; 
-scrollbar-highlight-color: #FFFFFF; scrollbar-3dlight-color: #A0A0A0; 
-scrollbar-darkshadow-color: #F6F6F6; scrollbar-track-color: #F6F6F6; 
-scrollbar-arrow-color: #A0A0A0;">
+					<div class="bl-content" id="target1">
 							<table style="margin-top: 10px">
 								<caption>
 									<h2>예측 결과가 출력되었습니다.</h2>
 								</caption>
 								<tr>
 									<td align="center">
-										<div id="map" style="width: 1200px; height: 860px;"></div>
+										<div id="map" style="width: 1200px; height: 700px; border-radius: 20px"></div>
 									</td>
 								</tr>
 							</table>
