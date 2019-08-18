@@ -1,51 +1,60 @@
 @charset "UTF-8";
-
-body { background-color: black; color: white;}
-.spot1 { left: 40%; -webkit-animation: move 5s infinite;}
-.spot2 { left: 60%; -webkit-animation: move2 5s infinite;}
-.spotlight {
-  position: absolute;
-	width: 53px;
-	height: 0px;
-  border-top: 500px solid rgba(255,255,255,0.25);
-  border-left: 40px solid transparent;
-  border-bottom: 0px solid #575;
-  border-right: 40px solid transparent;
-  background-color: transparent;
-  -webkit-transform-origin: 50% 100% 0;
-  z-index: 0;
-  /*-webkit-transition-timing: ease-in-out;*/
-}
-
- @-webkit-keyframes move {
-  0%  { 
-    -webkit-transform: rotate(30deg);
+@media only screen {
+  html,
+  body {
+    background: #222;
+    overflow: hidden;
+    height: 100%;
   }
-  50% {
-    -webkit-transform: rotate(-30deg);
+
+  .logo {
+    font-size: 8rem;
+    font-family: 'sonos-logoregular';
+    text-align: center;
+    background: -webkit-linear-gradient(left, #33235B, #D62229, #E97639, #792042, #33235B);
+    background: linear-gradient(left, #33235B, #D62229, #E97639, #792042, #33235B);
+    background-size: 3200px 200px;
+    margin-top: 20vh;
+    color: transparent;
+    -webkit-background-clip: text;
+    -webkit-animation: animate-logo;
+    -webkit-animation-delay: 0;
+    -webkit-animation-duration: 7s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-fill-mode: forwards;
+    transition: font-size 500ms ease-in-out;
+  }
+}
+@media only screen and (min-width: 40.063em) {
+  .logo {
+    margin-top: 30vh;
+    font-size: 13rem;
+  }
+}
+@media only screen and (min-width: 64.063em) {
+  .logo {
+    margin-top: 25vh;
+    font-size: 20rem;
+  }
+}
+@media only screen and (min-width: 90.063em) {
+  .logo {
+    margin-top: 20vh;
+    font-size: 30rem;
+  }
+}
+@media only screen and (min-width: 120.063em) {
+  .logo {
+    margin-top: 15vh;
+    font-size: 40rem;
+  }
+}
+@-webkit-keyframes animate-logo {
+  0% {
+    background-position: 0 3200px;
   }
   100% {
-    -webkit-transform: rotate(30deg);
+    background-position: 3200px 0;
   }
 }
-
- @-webkit-keyframes move2 {
-  0%  { 
-    -webkit-transform: rotate(-30deg);
-  }
-  50% {
-    -webkit-transform: rotate(30deg);
-  }
-  100% {
-    -webkit-transform: rotate(-30deg);
-  }
-}
-
-#text {
-  position: absolute;
-  left: 48%;
-  top: 25%;
-  z-index: 999;
-  color: rgba(255,255,255,0.15);
-}
-
