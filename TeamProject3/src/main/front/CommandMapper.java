@@ -4,6 +4,7 @@ import java.util.HashMap;
 
 import main.error.service.ErrorService;
 import main.main.service.MainService;
+import main.main.service.OutPutService;
 import main.main.service.StartService;
 import main.member.service.LoginOPService;
 import main.member.service.LoginService;
@@ -26,6 +27,7 @@ public class CommandMapper {
 		map.put("search.do", new LoginOPService());
 		map.put("register.do", new RegisterService());
 		map.put("registerOp.do", new RegisterOPService());
+		map.put("output.do", new OutPutService());
 		
 		return map;
 	}

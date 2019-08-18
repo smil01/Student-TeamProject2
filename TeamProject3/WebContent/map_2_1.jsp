@@ -47,7 +47,7 @@ table {
         minLevel: 1 // 클러스터 할 최소 지도 레벨 
     });
  
-    $.get("/map.jsons?day=${param.day}&start_time=${param.start_time}&end_time=${param.end_time}&sex_count=${param.sex_count}&sex_choice=${param.sex_choice}&start_age=${param.start_age}&end_age=${param.end_age}&max=${param.max}&dong=${param.dong}", function(datas) {
+    $.get("/map_1.json", function(datas) {
         var data = JSON.parse(datas);
         
         var markers = $(data.positions).map(function(i, position) {
