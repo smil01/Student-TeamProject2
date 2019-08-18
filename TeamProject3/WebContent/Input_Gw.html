@@ -70,7 +70,7 @@ color:black;
 		<map name="Map" id="Map">
 		<area shape="rect" coords="698,468,700,470" alt="Image Map" style="outline:none;" title="Image Map" href="http://www.image-maps.com/index.php?aff=mapped_users_[msg]Er" />
 		<area  alt="노원구" title="노원구" href="#" shape="poly" coords="467,19,464,23,456,23,453,29,447,29,438,35,436,35,435,44,427,63,437,77,441,90,443,105,442,114,436,117,432,114,431,111,425,116,423,129,431,137,433,143,442,151,448,156,459,154,464,153,480,142,492,151,502,144,498,138,515,124,508,108,498,105,491,108,487,106,490,95,475,87,475,82,488,81,492,79,487,62,487,54,482,50,490,41,490,35,485,30,475,32,471,31,477,24,475,21" style="outline:none;" target="_self"  id='nowon'/>
-		<area  alt="중랑구" title="중랑구" href="#" shape="poly" coords="493,154,481,146,462,157,464,166,462,176,458,182,455,184,464,203,471,216,470,227,478,225,487,231,497,224,496,214,507,207,510,195,519,188,514,180,518,172,523,171,515,164,519,150,505,145" style="outline:none;" target="_self"  id='jungrang'/>
+		<area  alt="노원구" title="노원구" href="#" shape="poly" coords="493,154,481,146,462,157,464,166,462,176,458,182,455,184,464,203,471,216,470,227,478,225,487,231,497,224,496,214,507,207,510,195,519,188,514,180,518,172,523,171,515,164,519,150,505,145" style="outline:none;" target="_self"  id='jungrang'/>
 		<area  alt="도봉구" title="도봉구" href="#" shape="poly" coords="423,62,432,43,431,38,435,28,426,27,421,23,409,29,402,13,393,14,387,9,377,15,379,24,374,28,374,39,373,44,382,51,391,61,382,87,384,96,394,98,405,106,413,120,420,126,427,107,433,106,437,113,441,108,437,84" style="outline:none;" target="_self"  id='dobong'/>
 		<area  alt="강동구" title="강동구" href="#" shape="poly" coords="591,209,583,213,554,229,543,231,538,236,516,244,517,255,519,264,514,274,527,279,529,290,521,297,529,306,536,305,555,315,558,312,558,306,566,302,566,289,584,267,594,271,605,267,604,244,597,228,593,224,597,216" style="outline:none;" target="_self"  id='gangdong'/>
 		<area  alt="강북구" title="강북구" href="#" shape="poly" coords="370,41,364,40,360,44,352,45,349,50,355,60,356,71,349,78,335,86,341,99,345,115,352,122,362,125,366,133,377,141,378,153,389,152,394,161,402,159,407,163,419,147,424,146,429,137,407,119,402,107,393,101,382,98,378,90,388,62,378,57,378,52" style="outline:none;" target="_self" id='gangbuc'/>
@@ -93,107 +93,109 @@ color:black;
 		<div style="background-color: rgba( 00, 00, 00, 0.4); width: 800px; height: 470px; margin: auto; padding-top: 20px;">
 		<p id='text' style="color:white;text-align:center;"><strong>위 지도에서 지역을 클릭해주세요!</strong></p>
         <p style="color:white;text-align:center;"><strong>요일을 선택해주세요 : </strong>
-        <select>
-        	<option>월</option>
-        	<option>화</option>
-        	<option>수</option>
-        	<option>목</option>
-        	<option>금</option>
-        	<option>토</option>
-        	<option>일</option>
+        <select name="day">
+        	<option value="Monday">월</option>
+        	<option value="Tuesday">화</option>
+        	<option value="Wednesday">수</option>
+        	<option value="Thursday">목</option>
+        	<option value="Friday">금</option>
+        	<option value="Saturday">토</option>
+        	<option value="Sunday">일</option>
         	
         </select>
         </p>
         <p style="color:white;text-align:center;"><strong>시간을 선택해주세요 : </strong>
-        <select>
-        	<option>00시</option>
-        	<option>01시</option>
-        	<option>02시</option>
-        	<option>03시</option>
-        	<option>04시</option>
-        	<option>05시</option>
-        	<option>06시</option>
-        	<option>07시</option>
-        	<option>08시</option>
-        	<option>09시</option>
-        	<option>10시</option>
-        	<option>11시</option>
-        	<option>12시</option>
-        	<option>13시</option>
-        	<option>14시</option>
-        	<option>15시</option>
-        	<option>16시</option>
-        	<option>17시</option>
-        	<option>18시</option>
-        	<option>19시</option>
-        	<option>20시</option>
-        	<option>21시</option>
-        	<option>22시</option>
-        	<option>23시</option>
+        <select name="start_time">
+        	<option value="00">00시</option>
+        	<option value="01">01시</option>
+        	<option value="02">02시</option>
+        	<option value="03">03시</option>
+        	<option value="04">04시</option>
+        	<option value="05">05시</option>
+        	<option value="06">06시</option>
+        	<option value="07">07시</option>
+        	<option value="08">08시</option>
+        	<option value="09">09시</option>
+        	<option value="10">10시</option>
+        	<option value="11">11시</option>
+        	<option value="12">12시</option>
+        	<option value="13">13시</option>
+        	<option value="14">14시</option>
+        	<option value="15">15시</option>
+        	<option value="16">16시</option>
+        	<option value="17">17시</option>
+        	<option value="18">18시</option>
+        	<option value="19">19시</option>
+        	<option value="20">20시</option>
+        	<option value="21">21시</option>
+        	<option value="22">22시</option>
+        	<option value="23">23시</option>
         </select>
         <strong>부터</strong>
-       	<select>
-        	<option>00시</option>
-        	<option>01시</option>
-        	<option>02시</option>
-        	<option>03시</option>
-        	<option>04시</option>
-        	<option>05시</option>
-        	<option>06시</option>
-        	<option>07시</option>
-        	<option>08시</option>
-        	<option>09시</option>
-        	<option>10시</option>
-        	<option>11시</option>
-        	<option>12시</option>
-        	<option>13시</option>
-        	<option>14시</option>
-        	<option>15시</option>
-        	<option>16시</option>
-        	<option>17시</option>
-        	<option>18시</option>
-        	<option>19시</option>
-        	<option>20시</option>
-        	<option>21시</option>
-        	<option>22시</option>
-        	<option>23시</option>
+       	<select name="end_time">
+        	<option value="00">00시</option>
+        	<option value="01">01시</option>
+        	<option value="02">02시</option>
+        	<option value="03">03시</option>
+        	<option value="04">04시</option>
+        	<option value="05">05시</option>
+        	<option value="06">06시</option>
+        	<option value="07">07시</option>
+        	<option value="08">08시</option>
+        	<option value="09">09시</option>
+        	<option value="10">10시</option>
+        	<option value="11">11시</option>
+        	<option value="12">12시</option>
+        	<option value="13">13시</option>
+        	<option value="14">14시</option>
+        	<option value="15">15시</option>
+        	<option value="16">16시</option>
+        	<option value="17">17시</option>
+        	<option value="18">18시</option>
+        	<option value="19">19시</option>
+        	<option value="20">20시</option>
+        	<option value="21">21시</option>
+        	<option value="22">22시</option>
+        	<option value="23">23시</option>
         </select>
         <strong>까지</strong>
         </p>
  
         <p style="color:white;text-align:center;"><strong>연령대를 선택해주세요 : </strong>
-        <select>
-       		<option>20대</option>
-        	<option>30대</option>
-        	<option>40대</option>
-        	<option>50대</option>
-        	<option>60대</option>
+        <select name="start_age">
+       		<option value="20">20대</option>
+        	<option value="30">30대</option>
+        	<option value="40">40대</option>
+        	<option value="50">50대</option>
+        	<option value="60">60대</option>
         </select>
         <strong>부터</strong>
-        <select>
-        	<option>20대</option>
-        	<option>30대</option>
-        	<option>40대</option>
-        	<option>50대</option>
-        	<option>60대</option>
+        <select name="end_age">
+       		<option value="20">20대</option>
+        	<option value="30">30대</option>
+        	<option value="40">40대</option>
+        	<option value="50">50대</option>
+        	<option value="60">60대</option>
         </select>
         <strong>까지	</strong>
         </p>
         
        <p style="color:white;text-align:center;"><strong>데이터 출력최대값을 선택해주세요 : </strong>
-        <select>
-       		<option>5개</option>
-        	<option>10개</option>
-        	<option>15개</option>
-        	<option>20개</option>
-        	
+        <select name="max">
+       		<option value="5">5개</option>
+        	<option value="10">10개</option>
+        	<option value="15">15개</option>
+        	<option value="20">20개</option>
+        	<option value="30">30개</option>
+        	<option value="40">40개</option>
+        	<option value="50">50개</option>
         </select>
 
         </p>
         
         <p style="color:white;text-align:center;"><strong>성별을 선택해주세요 : </strong>
-        <input type="checkbox" name="sex" value="M" >남 
-        <input type="checkbox" name="sex" value="female" >여
+	        <input type="checkbox" name="sexs" value="M" >남 
+	        <input type="checkbox" name="sexs" value="W" >여
         </p>
         
         <p style="text-align: center;">
@@ -240,7 +242,9 @@ $(function() {
     var img = document.getElementById('map');
     var first = document.getElementById('first');
     var second = document.getElementById('second');
-    var arrString = new Array();
+    var arrString;
+    var local = new Array("상계동", "월계동", "중계동", "하계동", "공릉동");
+    var isArr = new Array(false, false, false, false, false);
 	
 
     var sang = document.getElementById('sang');
@@ -248,53 +252,34 @@ $(function() {
     var jung = document.getElementById('jung');
     var ha = document.getElementById('ha');
     var gong = document.getElementById('gong');
-
- 
-    sang.addEventListener('click',function(){
-
-    	if(arrString.length<1){
-  		arrString.push(document.getElementById('sang').getAttribute('alt'));
-  		var text = document.getElementById('text').innerHTML=$("#jungrang").attr("alt")+"지역의 "+arrString+"을 선택하셨습니다.";
-  		}
-    	else{
-    		alert("최대 1곳만 선택가능합니다");
+    
+    function setText(i) {
+    	isArr[i] = !isArr[i];
+    	arrString = new Array();
+    	
+    	for(var j = 0; j < 5; j++){
+    		if(isArr[j]) {
+    			arrString.push(local[j]);
+    		}
     	}
+    	
+    	var text = document.getElementById('text').innerHTML=$("#jungrang").attr("alt")+"지역의 "+arrString+"을 선택하셨습니다.";
+	}
+
+    sang.addEventListener('click',function(){
+    	setText(0);
   	});
    moon.addEventListener('click',function(){
-   	if(arrString.length<1){
-  		arrString.push(document.getElementById('moon').getAttribute('alt'));
-  		var text = document.getElementById('text').innerHTML=$("#jungrang").attr("alt")+"지역의 "+arrString+"을 선택하셨습니다.";
-  		}
-    	else{
-    		alert("최대 1곳만 선택가능합니다");
-    	}
+   		setText(1);
   	});
     jung.addEventListener('click',function(){
-    	if(arrString.length<1){
-      		arrString.push(document.getElementById('jung').getAttribute('alt'));
-      		var text = document.getElementById('text').innerHTML=$("#jungrang").attr("alt")+"지역의 "+arrString+"을 선택하셨습니다.";
-      		}
-        	else{
-        		alert("최대 1곳만 선택가능합니다");
-        	}
+    	setText(2);
   	});
     ha.addEventListener('click',function(){
-    	if(arrString.length<1){
-      		arrString.push(document.getElementById('ha').getAttribute('alt'));
-      		var text = document.getElementById('text').innerHTML=$("#jungrang").attr("alt")+"지역의 "+arrString+"을 선택하셨습니다.";
-      		}
-        	else{
-        		alert("최대 1곳만 선택가능합니다");
-        	}
+    	setText(3);
   	});
     gong.addEventListener('click',function(){
-    	if(arrString.length<1){
-      		arrString.push(document.getElementById('gong').getAttribute('alt'));
-      		var text = document.getElementById('text').innerHTML=$("#jungrang").attr("alt")+"지역의 "+arrString+"을 선택하셨습니다.";
-      		}
-        	else{
-        		alert("최대 1곳만 선택가능합니다");
-        	}
+    	setText(4);
   	});
  
     
