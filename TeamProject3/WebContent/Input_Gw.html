@@ -93,7 +93,7 @@ color:black;
 		<div style="background-color: rgba( 00, 00, 00, 0.4); width: 800px; height: 470px; margin: auto; padding-top: 20px;">
 		<p id='text' style="color:white;text-align:center;"><strong>위 지도에서 지역을 클릭해주세요!</strong></p>
         <p style="color:white;text-align:center;"><strong>요일을 선택해주세요 : </strong>
-        <select name="day">
+        <select name="day" id="day">
         	<option value="Monday">월</option>
         	<option value="Tuesday">화</option>
         	<option value="Wednesday">수</option>
@@ -101,11 +101,10 @@ color:black;
         	<option value="Friday">금</option>
         	<option value="Saturday">토</option>
         	<option value="Sunday">일</option>
-        	
         </select>
         </p>
         <p style="color:white;text-align:center;"><strong>시간을 선택해주세요 : </strong>
-        <select name="start_time">
+        <select name="start_time" id="start_time">
         	<option value="00">00시</option>
         	<option value="01">01시</option>
         	<option value="02">02시</option>
@@ -132,7 +131,7 @@ color:black;
         	<option value="23">23시</option>
         </select>
         <strong>부터</strong>
-       	<select name="end_time">
+       	<select name="end_time" id="end_time">
         	<option value="00">00시</option>
         	<option value="01">01시</option>
         	<option value="02">02시</option>
@@ -162,7 +161,7 @@ color:black;
         </p>
  
         <p style="color:white;text-align:center;"><strong>연령대를 선택해주세요 : </strong>
-        <select name="start_age">
+        <select name="start_age" id="start_age">
        		<option value="20">20대</option>
         	<option value="30">30대</option>
         	<option value="40">40대</option>
@@ -170,7 +169,7 @@ color:black;
         	<option value="60">60대</option>
         </select>
         <strong>부터</strong>
-        <select name="end_age">
+        <select name="end_age" id="end_age">
        		<option value="20">20대</option>
         	<option value="30">30대</option>
         	<option value="40">40대</option>
@@ -181,7 +180,7 @@ color:black;
         </p>
         
        <p style="color:white;text-align:center;"><strong>데이터 출력최대값을 선택해주세요 : </strong>
-        <select name="max">
+        <select name="max" id="max">
        		<option value="5">5개</option>
         	<option value="10">10개</option>
         	<option value="15">15개</option>
@@ -194,12 +193,12 @@ color:black;
         </p>
         
         <p style="color:white;text-align:center;"><strong>성별을 선택해주세요 : </strong>
-	        <input type="checkbox" name="sexs" value="M" >남 
-	        <input type="checkbox" name="sexs" value="W" >여
+	        <input type="checkbox" id="sex_M" value="M" checked="checked">남 
+	        <input type="checkbox" id="sex_W" value="W" >여
         </p>
         
         <p style="text-align: center;">
-        <input type="submit" class="btn btn-danger" value="전송">
+        <input type="button" class="btn btn-danger" value="전송" onclick="submits()">
         <input type="button" class="btn btn-danger" value="취소" id="clear" onClick="window.location.reload()">
         </p>
         </div>
@@ -312,6 +311,40 @@ $(function() {
   		
   	});
   	
+  	
+  	function submits() {
+		var day = $("#day option:selected").val();
+		var start_time = $("#start_time option:selected").val();
+		var end_time = $("#end_time option:selected").val();
+		var start_age = $("#start_age option:selected").val();
+		var end_age = $("#end_age option:selected").val();
+		var max = $("#max option:selected").val();
+		var dong;
+		var sex_count;
+		var sex_choice;
+		
+		var M = $("input:checkbox[id='sex_M']").is(":checked");
+		var W = $("input:checkbox[id='sex_W']").is(":checked");
+		if(M && W) {
+			sex_count = 1;
+			sex_choice = "M";
+		} else if(M) {
+			sex_count = 0;
+			sex_choice = "M";
+		} else if(W) {
+			sex_count = 0;
+			sex_choice = "W";
+		}
+		
+		if(arrString == null) {
+			dong = local;
+		} else {
+			dong = arrString;
+		}
+		
+		/* '#'을 이동할 대상 페이지로 바꿔주세요. */
+		location.href="#?day=" + day + "&start_time=" + start_time + "&end_time=" + end_time + "&sex_count=" + sex_count + "&sex_choice=" + sex_choice + "&start_age=" + start_age + "&end_age=" + end_age + "&dong=" + dong + "&max=" + max;
+	}
   </script>
 </body>
 
