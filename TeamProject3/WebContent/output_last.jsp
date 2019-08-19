@@ -200,49 +200,11 @@
 					<!-- 워드 클라우드 분석 확인 내용 시작-->
 					<div class="bl-content">
 						<h2 style="text-align: center;" >해당지역의 워드 클라우드 분석 현황입니다.</h2>
-						<p style="text-align: center;" >해당지역의  공공데이터를 기반으로 가장 많은 관심사가 담긴 워드를 출력해줍니다.</p>
-						<div style="width: 700px; height: 400px; float: left;">
-							<img src="images/wordcloud.png" width="700px;" height="400px">
+						<p style="text-align: center;" >해당지역의  공공데이터와 지역민원데이터를 기반으로 지역,성별,연령 에게 가장 이슈가 되는 맞춤 키워드가 추출 되었습니다.</p>
+						<p style="text-align: center;" >표에는 주목해야할 키워드가 입력되었습니다.</p>
+						<div align="center">
+							<img src="<%=request.getAttribute("set")%>.png" width="750px;" height="600px">
 						</div>
-						<div style="float: right;">
-							<p style="text-align: center;" >해당지역의 20대에서  20대까지 남성에게 가장 이슈가 되는 단어는<br><strong style="color: red;">자동차</strong>입니다.</p> 
-							
-							<table class="table1" style="width: 900px; height: auto; margin: 0px; padding: 0px; text-align: center;">
-							 	<tr>
-							 		<td >순위</td>
-							 		<td>단어명</td>
-							 		<td>총 빈도수</td>
-							 	</tr>
-							 	<tr>
-							 		<td >1</td>
-							 		<td>자동차</td>
-							 		<td>357</td>
-							 	</tr>
-							 	<tr>
-							 		<td >2</td>
-							 		<td>지구</td>
-							 		<td>340</td>
-							 	</tr>
-							 	<tr>
-							 		<td >3</td>
-							 		<td>아파트</td>
-							 		<td>259</td>
-							 	</tr>
-							 	<tr>
-							 		<td >4</td>
-							 		<td>입주</td>
-							 		<td>252</td>
-							 	</tr>
-							 	<tr>
-							 		<td >5</td>
-							 		<td>주택</td>
-							 		<td>79</td>
-							 	</tr>
-						 	</table>
-							
-						
-						</div>
-
 					</div>
 					<!-- 워드 클라우드 분석 확인 내용 끝-->
 					<span class="bl-icon bl-icon-close"></span>

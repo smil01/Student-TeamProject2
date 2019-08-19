@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Random;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -210,6 +211,9 @@ public class OutPutService implements CommandService{
 		
 		
 		request.getSession().setAttribute("json", json_result);
+		
+		Random rd = new Random();
+		request.setAttribute("set", "" + (rd.nextInt(20)+1));
 		
 		return "output_last.jsp";
 	}

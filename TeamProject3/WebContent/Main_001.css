@@ -1,14 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="EUC-KR">
-<title>Main_Gw</title>
- <link rel="stylesheet" type="text/css" href="./GW_CSS/Main_001.css">
- <style type="text/css">
- 
- @media only screen {
+@charset "UTF-8";
+@media only screen {
   html,
   body {
     background: #222;
@@ -67,22 +58,3 @@
     background-position: 3200px 0;
   }
 }
-
-A:link { text-decoration:none; color:#646464;}
-A:visited { text-decoration:none; color:#646464;}
-A:active { text-decoration:none; color:#646464;}
-A:hover { text-decoration:none; color:#646464;}
- </style>
-
-</head>
-<body>
-
-
-
-<div style="text-align: center; margin:auto;">
-<a href="main.do"><h2 class="logo">보좌관들</h2></a>
-</div>
-
-
-</body>
-</html>
