@@ -1,3 +1,8 @@
+<%@page import="main.map.DTO.chartDTO"%>
+<%@page import="java.util.HashMap"%>
+<%@page import="main.map.DTO.mapDTO"%>
+<%@page import="main.map.DTO.setMapDTO"%>
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -32,6 +37,10 @@
 			height: 30px;
 		}
 		
+		rect{
+			border-radius: 20px;
+		}
+		
 		</style>
 		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 		<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
@@ -52,36 +61,58 @@
 		<!--  Page Loding Script End -->
 		
 		<!--  chart code start  -->
-		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-		<script type="text/javascript">
-	      google.charts.load('current', {'packages':['corechart']});
-	      google.charts.setOnLoadCallback(drawChart);
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['line']});
+      google.charts.setOnLoadCallback(drawChart);
 
-	      function drawChart() {
-	        var data = google.visualization.arrayToDataTable([
-	          ['Time', '상계동', '월계동'],
-	          ['3시',  225, 61],
-	          ['4시',  175, 93],
-	          ['5시',  257,  343],
-	          
-	        ]);
+    function drawChart() {
+	  <%ArrayList<setMapDTO> chart_list = (ArrayList<setMapDTO>)request.getAttribute("chart");%>
+	  <%ArrayList<mapDTO> list = chart_list.get(0).getList();%>
+	  <%ArrayList<String> chart_key = (ArrayList<String>)request.getAttribute("chart_key");%>
+	  <%HashMap<String, HashMap<String, Integer>> chart_map1 = (HashMap<String, HashMap<String, Integer>>)request.getAttribute("chart_map1");%>
+      var data = new google.visualization.DataTable();
+      data.addColumn('number', '');
+      <%for(int i = 1; i <= Integer.parseInt(request.getParameter("max")); i++) {%>
+      data.addColumn('number', '<%=i%>순위 지역');
+      <%}%>
 
-	        var options = {
-	          title: '시간대별 유동인구수 비교',
-	          curveType: 'function',
-	          legend: { position: 'bottom' }
-	        };
+      data.addRows([
+    	  <%=request.getAttribute("honto_map")%>
+      ]);
 
-	        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+      var options = {
+        chart: {
+          title: `${param.dong}의 ${param.start_time}시부터 ${param.end_time}시 사이의 <c:if test="${param.sex_count==0 && param.sex_choice=='M'}">남</c:if><c:if test="${param.sex_count==0 && param.sex_choice=='W'}">여</c:if><c:if test="${param.sex_count==1}">남/여</c:if>성
+			 <%for(int i = Integer.parseInt(request.getParameter("start_age")); i <= Integer.parseInt(request.getParameter("end_age")); i+=10){%><%=i%><%
+				 if(i != Integer.parseInt(request.getParameter("end_age"))){
+					 %>, <%
+				 }
+				 }%>대 유동인구의 상위 ${param.max}곳을 출력한 내용입니다.`,
+          subtitle: 'x축 시간(시)   y축 유동인구(명)'
+        },
+        width: 800,
+        height: 600,
+        axes: {
+          x: {
+            0: {side: 'top'}
+          }
+        },
+        backgroundColor: '#ffffff'
+      };
 
-	        chart.draw(data, options);
-	      }
-	    
-		
-		
-		</script>
+      var chart = new google.charts.Line(document.getElementById('line_top_x'));
+
+      chart.draw(data, google.charts.Line.convertOptions(options));
+    }
+  </script>
 		<!--  chart code end -->
 		<link rel="stylesheet" type="text/css" href="scroll.css" />
+		<style type="text/css">
+			#map div{
+				color: black;
+			}
+		</style>
 	</head>
 	<body>
 	<div class="se-pre-con" style="width: 100%; height: 100%"></div>
@@ -95,21 +126,31 @@
 					<div class="bl-content" id="target1">
 							<table style="margin-top: 10px">
 								<caption>
-									<h2>예측 결과가 출력되었습니다.</h2>
+									<h2>${param.dong}의 선거유세 지역 추천</h2>
 								</caption>
 								<tr>
 									<td align="center">
-										<div id="map" style="width: 1200px; height: 700px; border-radius: 20px"></div>
+										<div id="map" style="width: 1200px; height: 700px; border-radius: 20px;"></div>
 									</td>
 								</tr>
 							</table>
-						<h2 style="text-align: center;">이 지도는 다음의 정보를 출력한 내용입니다.</h2>
-						<p style="text-align: center;" id="mapdata">상계동,월계동의 3시~5시 사이의 남성 20대 유동인구의 상위 2곳을 출력한 내용입니다.</p>
+						<h3 style="text-align: center;">이 지도는 유동인구를 예측한 지도이며 다음의 정보를 출력한 내용입니다.</h3>
+						<p style="text-align: center;" id="mapdata">${param.dong}의 ${param.start_time}시부터 ${param.end_time}시 사이의 <c:if test="${param.sex_count==0 && param.sex_choice=='M'}">남</c:if><c:if test="${param.sex_count==0 && param.sex_choice=='W'}">여</c:if><c:if test="${param.sex_count==1}">남/여</c:if>성
+						 <%for(int i = Integer.parseInt(request.getParameter("start_age")); i <= Integer.parseInt(request.getParameter("end_age")); i+=10){%><%=i%><%
+						 if(i != Integer.parseInt(request.getParameter("end_age"))){
+							 %>, <%
+						 }
+						 }%>대 유동인구의 상위 ${param.max}곳을 출력한 내용입니다.</p>
 						<p style="text-align: center;" id="mapdata">하단의 사진은 해당 데이터를 기반으로 출력되는 장소의 실 사진입니다.(시간에 따라 현재의 모습과 달라질수있습니다)</p>
+						<br><br>
+						<%for(int i = 0; i < list.size(); i++){%>
 						<p style="text-align: center;">
-							<img src="images/Sample_target1.jpg" width="500px;" height="500px;">
-							<img src="images/Sample_target2.jpg" width="500px;" height="500px;">
+							<img src="<%=list.get(i).getImg()%>" width="600px;" height="400px;" style="border-radius: 20px; margin-bottom: 0px">
+							<br>
+							<%=i+1%> 순위 지역 : <%=list.get(i).getAddr()%>
 						</p>
+						<br><br>
+						<%}%>
 					</div>
 					<!-- 선거지역 확인하기 내용 끝-->
 					<span class="bl-icon bl-icon-close"></span>
@@ -123,31 +164,27 @@
 						
 						<h2 style="text-align: center;">지역 분석 상세표</h2>
 						<p style="text-align: center;">지도 클러스터를 기준으로 데이터 해석을 제공합니다.</p>
-						 <div id="curve_chart" style="width: 850px;; height: 400px; float: left;	"></div>
-						 <div style="float: right;">
-						 <p id="outputdata">상계동지역에서 가장 많은 인구분포를 가지고 있습니다.</p>
-						 <table class="table1" style="width: 900px; height: auto; margin: 0px; padding: 0px; text-align: center;">
+						 <div id="line_top_x" align="center"></div>
+						 <div align="center">
+						 <p id="outputdata"><%=((ArrayList<setMapDTO>)request.getAttribute("chart")).get(0).getList().get(0).getDong()%>(1순위)지역에서 가장 많은 인구분포를 가지고 있습니다.</p>
+						 <table class="table1" style="width: 800px; height: auto; margin: 0px; padding: 0px; text-align: center;">
 						 	<tr>
 						 		<td>순위</td>
 						 		<td>지역명</td>
-						 		<td>20대 총 예상</td>
-						 		
+						 		<td>예상 유동인구</td>
+						 		<td>남성 비중</td>
+						 		<td>여성 비중</td>
 						 	</tr>
+						 	<%HashMap<String, chartDTO> map = (HashMap<String, chartDTO>)request.getAttribute("chart_map2");%>
+						 	<%for(int i = 0; i < chart_key.size(); i++){%>
 						 	<tr>
-						 		<td>1</td>
-						 		<td>서울 특별시 상계1동 수락현대아파트</td>
-						 		<td>시간당 평균 219명</td>
-						 		
+						 		<td><%=i+1%></td>
+						 		<td><%=chart_key.get(i)%></td>
+						 		<td><%=map.get(chart_key.get(i)).getTotal()%>명</td>
+						 		<td><%=map.get(chart_key.get(i)).getM()%>명</td>
+						 		<td><%if(map.get(chart_key.get(i)).getW()!=0){%><%=map.get(chart_key.get(i)).getW()%>명<%}%></td>
 						 	</tr>
-						 	
-						 	<tr>
-						 		<td>2</td>
-						 		<td>서울특별시 상계6.7동 상계동 733번지 승경빌딩</td>
-						 		<td>시간당 평균 165명</td>
-
-						 	</tr>
-						 	
-						 	
+						 	<%}%>				 	
 						 </table>
 						 
 						 </div>
@@ -201,10 +238,6 @@
 							 		<td>주택</td>
 							 		<td>79</td>
 							 	</tr>
-							 	
-							 	
-
-							 	
 						 	</table>
 							
 						

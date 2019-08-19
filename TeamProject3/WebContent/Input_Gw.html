@@ -128,11 +128,9 @@ color:black;
         	<option value="20">20시</option>
         	<option value="21">21시</option>
         	<option value="22">22시</option>
-        	<option value="23">23시</option>
         </select>
         <strong>부터</strong>
        	<select name="end_time" id="end_time">
-        	<option value="00">00시</option>
         	<option value="01">01시</option>
         	<option value="02">02시</option>
         	<option value="03">03시</option>
@@ -342,8 +340,12 @@ $(function() {
 			dong = arrString;
 		}
 		
-		/* '#'을 이동할 대상 페이지로 바꿔주세요. */
-		location.href="output.do?day=" + day + "&start_time=" + start_time + "&end_time=" + end_time + "&sex_count=" + sex_count + "&sex_choice=" + sex_choice + "&start_age=" + start_age + "&end_age=" + end_age + "&dong=" + dong + "&max=" + max;
+		if(start_time >= end_time){
+			alert('끝시간이 시작시간보다 빠르거나 같을 수 없습니다.');
+		} else {
+			/* '#'을 이동할 대상 페이지로 바꿔주세요. */
+			location.href="output.do?day=" + day + "&start_time=" + start_time + "&end_time=" + end_time + "&sex_count=" + sex_count + "&sex_choice=" + sex_choice + "&start_age=" + start_age + "&end_age=" + end_age + "&dong=" + dong + "&max=" + max;
+		}
 	}
   </script>
 </body>
