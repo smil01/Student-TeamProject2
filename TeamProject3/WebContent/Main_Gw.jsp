@@ -43,7 +43,7 @@ $(function(){
 <header>
 <div class="container">
 	<div class="container-small">
-		<a href="Main_Gw.html" class="headA">LOGGER</a>
+		<a href="main.do" class="headA">보좌관들</a>
 
 		<button type="button" class="headC">
 			<span class="fa fa-bars" title="MENU"></span>
@@ -52,8 +52,8 @@ $(function(){
 
 	<nav class="headB">
 		<ul>
-			<li><a href="Main_Gw.html">TOP</a></li>
-			<li><a href="about.html">ABOUT</a></li>
+			<li><a href="main.do">TOP</a></li>
+			<li><a href="TeamPage/TeamProducePage.html">ABOUT</a></li>
 			<%if(login==null){ %>
 			<li><a href="login.do">로그인</a></li>
 			<%} else {%>
@@ -138,7 +138,7 @@ $(function(){
 	<div class="text">
 		<h2>당선책 개발진</h2>
 		<p>그때그때 일상을 기록하는 당선책!, 나중에 과거의 일상을 보면 그때는 알지 못했던 다양한 즐거움이 보일 것입니다.</p>
-		<a href="./OUTPUT/output_GW.html">개발진 보러가기!
+		<a href="TeamPage/TeamProducePage.html">개발진 보러가기!
 		<span class="fa fa-chevron-right"></span>
 		</a>
 	</div>
@@ -220,7 +220,7 @@ $(function(){
 	</nav>
 
 	<div class="footC">
-		© LOGGER corp. All rights reserved.
+		© Team All rights reserved.
 	</div>
 
 </div>
